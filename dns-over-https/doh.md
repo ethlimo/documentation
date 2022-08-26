@@ -25,6 +25,7 @@ The `GET` verb is reserved for use with JSON replies only. The URL must be const
 
 * `name=` (Required) - ENS domain name to resolve, i.e. `vitalik.eth`
 * `type=TXT` (Required) - At the moment the only supported value for the `type=` parameter is `TXT`
+* `dns=<base64 encoded DNS message>` (Optional) - Send a base64 encoded DNS message instead of relying upon `name`.
 
 An example query would be:
 

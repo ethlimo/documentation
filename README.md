@@ -13,4 +13,4 @@ In the event that a given ENS domain does _not_ have a `contenthash` defined, we
 
 ### Support
 
-Please use the `#community-support` channel in our Discord server for any questions. Feature requests should be submitted to the `community-forum`.
+Please use the `#community-support` channel in our [Discord server](https://discord.gg/zf8NxW94rB) for any questions. Feature requests should be submitted to the `community-forum` channel.

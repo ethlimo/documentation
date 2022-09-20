@@ -6,4 +6,4 @@ By default all content is cached for 15 minutes. This means that if you update t
 
 ### HTTPS Certificates
 
-All subdomain certificates, i.e. non `*.eth.limo` are generated on demand, provided that there is a valid resolver set for the subdomain. Users no longer need to request certificates manually in our [Discord server](https://t.co/xMZL6k7JsJ).
+All subdomain certificates, i.e. non `*.eth.limo` are generated on demand, provided that there is a valid resolver set for the subdomain. Users no longer need to request certificates manually in our [Discord server](https://discord.gg/zf8NxW94rB).

@@ -4,13 +4,13 @@
 
 eth.limo provides an RFC 8484 comptaible public DoH API which can be accessed at this endpoint:
 
-* https://dns.eth.limo/dns-query
+* [https://dns.eth.limo/dns-query](https://dns.eth.limo/dns-query)
 
 Currently we only support DNSLink `TXT` records due to client limitations for handling  other record types which are dervied from an ENS contenthash.
 
 **What is DNSLink?**
 
-DNSLink provides an application friendly specification for linking content between services. Please refer to https://dnslink.dev/ for a detailed explanation.
+DNSLink provides an application friendly specification for linking content between services. Please refer to [https://dnslink.dev/](https://dnslink.dev/) for a detailed explanation.
 
 ---
 
@@ -69,7 +69,7 @@ The content path is available in `.Answer[0].data`.
 
 If your application needs support for binary data, please use the `POST` method along with the `Content-Type: application/dns-message` header in your request. All data must be binary encoded. Please refer to the documentation of your DoH client for more information on how to properly construct requests.
 
-In this example, we'll use https://github.com/curl/doh as our client.
+In this example, we'll use [https://github.com/curl/doh](https://github.com/curl/doh) as our client.
 
 ```shell
 $ doh -tTXT vitalik.eth https://dns.eth.limo/dns-query

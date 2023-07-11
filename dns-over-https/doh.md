@@ -79,6 +79,18 @@ TXT: dnslink=/ipfs/QmQhCuJqSk9fF58wU58oiaJ1qbZwQ1eQ8mVzNWe7tgLNiD/
 
 ```
 
+### .ART Support
+
+Our DoH API also supports `.art` domains. For example:
+
+```shell
+$ curl 'https://dns.eth.limo/dns-query?name=limo.art&type=TXT'
+
+{"Status":"0","RD":false,"RA":false,"AD":false,"CD":false,"TC":false,"Question":[{"type":16,"name":"limo.art"}],"Answer":[{"type":16,"name":"limo.art","data":"dnslink=/ipfs/bafybeico3uuyj3vphxpvbowchdwjlrlrh62awxscrnii7w7flu5z6fk77y/","ttl":600}]}
+```
+
+
+
 ---
 
 ### HTTP Response Codes

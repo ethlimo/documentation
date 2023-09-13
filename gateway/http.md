@@ -2,7 +2,7 @@
 
 ### Caching
 
-By default all content is cached for 15 minutes. This means that if you update the `contenthash` of your ENS domain, it _may_ take _up to_ 15 minutes for those changes to become visible. We are actively working on a refactor of the caching layer which will eventually deprecate this limitation.
+By default all content is cached for 5 minutes. This means that if you update the `contenthash` of your ENS domain, it _may_ take _up to_ 5 minutes for those changes to become visible. We are actively working on a refactor of the caching layer which will eventually deprecate this limitation.
 
 ### HTTPS Certificates
 

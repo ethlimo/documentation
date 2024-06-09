@@ -11,25 +11,31 @@
 
 ## Beginner
 
-* [How to register an ENS domain](beginner/how-to-register-an-ens-domain.md)
-* [How to use IPFS/IPNS](beginner/how-to-use-ipfs-ipns/README.md)
-  * [How To Install IPFS Locally](beginner/how-to-use-ipfs-ipns/how-to-install-ipfs-locally/README.md)
-    * [IPFS Desktop (Windows)](beginner/how-to-use-ipfs-ipns/how-to-install-ipfs-locally/ipfs-desktop-windows.md)
-    * [IPFS Desktop (Linux)](beginner/how-to-use-ipfs-ipns/how-to-install-ipfs-locally/ipfs-desktop-linux.md)
-    * [IPFS Desktop (Mac)](beginner/how-to-use-ipfs-ipns/how-to-install-ipfs-locally/ipfs-desktop-mac.md)
-  * [Self-Hosting Instructions for IPFS and IPNS](beginner/how-to-use-ipfs-ipns/self-hosting-instructions-for-ipfs-and-ipns.md)
-  * [Hosting using a pinning service](beginner/how-to-use-ipfs-ipns/hosting-using-a-pinning-service.md)
+* [How to register an ENS domain/name](beginner/how-to-register-an-ens-domain.md)
 * [Setting up a GitHub Repository](beginner/setting-up-a-github-repository.md)
-* [Uploading to IPFS](beginner/uploading-to-ipfs.md)
-* [Configuring your ENS name](beginner/configuring-your-ens-name.md)
+* [How To Install IPFS Locally](beginner/how-to-install-ipfs-locally/README.md)
+  * [IPFS Desktop (Windows)](beginner/how-to-install-ipfs-locally/ipfs-desktop-windows.md)
+  * [IPFS Desktop (Linux)](beginner/how-to-install-ipfs-locally/ipfs-desktop-linux.md)
+  * [IPFS Desktop (Mac)](beginner/how-to-install-ipfs-locally/ipfs-desktop-mac.md)
+* [How to use IPFS/IPNS](beginner/how-to-use-ipfs-ipns/README.md)
+  * [Uploading to IPFS](beginner/how-to-use-ipfs-ipns/uploading-to-ipfs/README.md)
+    * [Self-Hosting Instructions for IPFS and IPNS](beginner/how-to-use-ipfs-ipns/uploading-to-ipfs/self-hosting-instructions-for-ipfs-and-ipns.md)
+    * [Hosting using a pinning service](beginner/how-to-use-ipfs-ipns/uploading-to-ipfs/hosting-using-a-pinning-service.md)
+* [Setting Up Your ENS Name/Domain](beginner/configuring-your-ens-name/README.md)
+  * [Updating Your ENS Content Records](beginner/configuring-your-ens-name/updating-your-ens-content-records.md)
+  * [Content Hash Overview](beginner/configuring-your-ens-name/content-hash-overview/README.md)
+    * [Understanding Content Hashes, IPNS, and IPFS for ENS](beginner/configuring-your-ens-name/content-hash-overview/understanding-content-hashes-ipns-and-ipfs-for-ens.md)
+    * [Understanding IPFS Content Identifiers (CIDs)](beginner/configuring-your-ens-name/content-hash-overview/understanding-ipfs-content-identifiers-cids.md)
+
+## IPFS Pinning Providers
+
+* [Filebase](ipfs-pinning-providers/undefined/README.md)
+  * [Using the Filebase Public IPFS Gateway](ipfs-pinning-providers/undefined/using-the-filebase-public-ipfs-gateway.md)
+  * [Filebase IPFS Pinning](ipfs-pinning-providers/undefined/filebase-ipfs-pinning.md)
 
 ## STATIC SITE BUILDERS/TEMPLATES
 
 * [-](static-site-builders-templates/undefined.md)
-
-## IPFS Pinning Providers
-
-* [-](ipfs-pinning-providers/undefined.md)
 
 ## Intermediate
 
@@ -37,10 +43,6 @@
 * [-](intermediate/undefined.md)
 * [-](intermediate/undefined-1.md)
 * [-](intermediate/undefined-2.md)
-
-## Advanced
-
-* [Page 1](advanced/page-1.md)
 
 ***
 

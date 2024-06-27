@@ -18,9 +18,9 @@ Setting up your `.art` domain for LIMO resolution is an easy and straight forwar
 2. Identify the domain or subdomain that you intend to use.
 3. Configure the following `A` records for your domain(s) or subdomain(s):
   ```
-  3.16.254.55
-  18.190.132.174
-  3.22.179.166
+3.140.119.203
+18.219.255.217
+3.135.72.151
   ```
 
 _Note_ - a DNS `A` record can contain multiple IP addresses. Setup and workflow steps may differ between registrars. Please consult the provider's documentation for your specific use case.
@@ -30,9 +30,9 @@ _Note_ - a DNS `A` record can contain multiple IP addresses. Setup and workflow 
 ```shell
 $ dig limo.art +short
 
-3.16.254.55
-18.190.132.174
-3.22.179.166
+3.140.119.203
+18.219.255.217
+3.135.72.151
 ```
 
 5. The IP addresses returned by the command above should match those of step 3. Once you have confirmed that the record is properly configured you're all done!

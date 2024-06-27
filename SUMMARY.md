@@ -47,3 +47,4 @@
 ***
 
 * [.ART Resolution](.art-resolution.md)
+* [.gno Resolution](./gnosis/gateway.md)

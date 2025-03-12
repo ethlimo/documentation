@@ -8,9 +8,15 @@ Any properly configured ENS or Gnosis domain is eligible for gateway resolution 
 
 By default all content is cached for 5 minutes. This means that if you update the `contenthash` of your ENS domain, it _may_ take _up to_ 5 minutes for those changes to become visible
 
+### CCIP and Offchain Resolution
+Both `*.eth.limo` and `*.eth.link` gateways support offchain resolution via [CCIP](https://eips.ethereum.org/EIPS/eip-3668). For more information, please consult the following resources:
+
+* [Unruggable Gateway](https://github.com/unruggable-labs/unruggable-gateways)
+* [Cross Chain/Offchain Resolvers](https://docs.ens.domains/resolvers/ccip-read)
+
 ### HTTPS Certificates
 
-All subdomain certificates, i.e. non `*.eth.limo` are generated on demand, provided that there is a valid resolver set for the subdomain. Users no longer need to request certificates manually in our [Discord server](https://discord.gg/zf8NxW94rB).
+All subdomain certificates, i.e. non `*.eth.limo` or `*.eth.link` (single left label) are generated on demand, provided that there is a valid resolver set for the subdomain (including CCIP). Users no longer need to request certificates manually in our [Discord server](https://discord.gg/zf8NxW94rB).
 
 ### Server Side Headers
 

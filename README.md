@@ -1,6 +1,16 @@
----
-description: Exploring the Ethereum Name Service as a Pillar of the Decentralized Web
----
+# What is eth.limo?
+
+eth.limo is a public goods project that provides a free, open-source gateway to decentralized web content built with the Ethereum Name Service (ENS) and various decentralized storage protocols. It simplifies access to decentralized web content by resolving ENS names and content identifiers, allowing users to interact with the decentralized web without needing to run their own clients or manage complex configurations. More information can be found in our [introduction](./introduction/what-is-eth.limo/README.md) section.
+
+### TL;DR
+
+Any [properly configured](./beginner/configuring-your-ens-name/updating-your-ens-content-records.md) ENS domain can be accessed through the eth.limo gateway. For example, `foo.eth.limo` will resolve to the content associated with the ENS name `foo.eth`, whether it's hosted on IPFS, Arweave, Swarm, or any other supported decentralized storage protocol. No configuration is required to use eth.limo, either as a user or a developer; simply add `.limo` to the end of your ENS domain name in any browser and you're on your way!
+
+Storage protocol support includes: [IPFS](https://ipfs.tech/), [IPNS](https://docs.ipfs.tech/concepts/ipns/), [Arweave](https://www.arweave.org/), [Arweave Name System](https://ar.io/arns), and [Swarm](https://www.ethswarm.org/).
+
+### Want to run your own local gateway?
+
+Check out our API [repo](https://github.com/ethlimo/dweb-proxy-api) for instructions on how to set up your own local ENS gateway.
 
 # What is ENS?
 
@@ -8,9 +18,7 @@ description: Exploring the Ethereum Name Service as a Pillar of the Decentralize
 
 **Transforming Digital Identity Since 2017**
 
-The Ethereum Name Service (ENS) revolutionizes the way we interact with blockchain technology, making Ethereum addresses user-friendly with '.eth' domain names. This innovation extends beyond Ethereum, with compatibility for a wide range of identifiers including Bitcoin, Litecoin, and IPFS hashes.
-
-
+The [Ethereum Name Service (ENS)](https://ens.domains) revolutionizes the way we interact with blockchain technology, making Ethereum addresses user-friendly with '.eth' domain names. This innovation extends beyond Ethereum, with compatibility for a wide range of identifiers including Bitcoin, Litecoin, IPFS hashes, and much more.
 
 **Example: Ethereum Address Resolution**
 

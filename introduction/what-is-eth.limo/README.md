@@ -12,7 +12,7 @@ eth.limo is intended to be operated as a reliable and secure public good for all
 
 eth.limo operates as a reverse proxy for ENS names and decentralized storage protocols.
 
-eth.limo uses a wildcard DNS record `*.eth.limo` to dynamically capture requests for all ENS domains. The eth.limo service automatically resolves the IPFS/IPNS/Arweave/Swarm contenthash of the requested ENS naame and returns the corresponding static content over HTTPS. Since native IPFS/IPNS/Arweave/Swarm resolution capabilities are missing from the majority of browsers, eth.limo represents a bridge from the “normal” internet to the decentralized one.
+eth.limo uses a wildcard DNS record `*.eth.limo` to dynamically capture requests for all ENS domains. The eth.limo service automatically resolves the IPFS/IPNS/Arweave/Swarm contenthash of the requested ENS name and returns the corresponding static content over HTTPS. Since native IPFS/IPNS/Arweave/Swarm resolution capabilities are missing from the majority of browsers, eth.limo represents a bridge from the “normal” internet to the decentralized one.
 
 Zero-configuration is required in order to access or host a site or dApp on eth.limo, making eth.limo an excellent no-cost solution for providing Web 2.0 access to your project.
 

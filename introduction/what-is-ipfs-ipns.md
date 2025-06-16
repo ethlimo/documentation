@@ -33,5 +33,3 @@ Together, IPFS and IPNS empower users to take control of their online content, f
 ### Conclusion
 
 IPNS and IPFS are building blocks for a web where users control their data and can rely on resilient, efficient access to content.&#x20;
-
-\

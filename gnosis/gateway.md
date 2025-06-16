@@ -4,4 +4,4 @@ We now support [`.gno`](https://genomedomains.com/) name resolution at `*.gno.li
 
 ### Resolution
 
-The resolution process for `.gno` domains is identical to that of `*.eth.limo`. Please consult the main gateway [documentation](../gateway/http.md) for more information.
+The resolution process for `.gno` domains is identical to that of `*.eth.limo`. Please consult the main gateway [documentation](../introduction/what-is-eth.limo/gateway-basics/README.md) for more information.

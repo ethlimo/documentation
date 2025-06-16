@@ -1,5 +1,7 @@
 # Using eth.limo with IPFS (Kubo)
 
+Important update - as of 01/2025, all IPFS clients developed by the IPFS Shipyard team now use dns.eth.limo as the default resolver for all ENS queries. Existing installations that were previously hardcoded to use eth.link are unaffected. You can learn more [here](https://github.com/ipfs/boxo/issues/771)
+
 The most popular IPFS client, [Kubo](https://github.com/ipfs/go-ipfs) (formally go-ipfs) can be configured to use eth.limo DNS for native ENS resolution by running the following command:
 
 ```shell

@@ -33,16 +33,12 @@
   * [Using the Filebase Public IPFS Gateway](ipfs-pinning-providers/undefined/using-the-filebase-public-ipfs-gateway.md)
   * [Filebase IPFS Pinning](ipfs-pinning-providers/undefined/filebase-ipfs-pinning.md)
 
-## STATIC SITE BUILDERS/TEMPLATES
-
-* [-](static-site-builders-templates/undefined.md)
+## IPNS Publishing
+* [How to Publish to IPNS](ipns-publishing/how-to-publish-to-ipns.md)
 
 ## Intermediate
 
 * [Using eth.limo with IPFS (Kubo)](intermediate/using-eth.limo-with-ipfs-kubo.md)
-* [-](intermediate/undefined.md)
-* [-](intermediate/undefined-1.md)
-* [-](intermediate/undefined-2.md)
 
 ***
 

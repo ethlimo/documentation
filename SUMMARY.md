@@ -39,8 +39,18 @@
 ## Intermediate
 
 * [Using eth.limo with IPFS (Kubo)](intermediate/using-eth.limo-with-ipfs-kubo.md)
+* [Running Your Own IPFS Node and IPNS Publishing](intermediate/running-your-own-ipfs-node.md)
 
 ***
 
 * [.ART Resolution](.art-resolution.md)
 * [.gno Resolution](./gnosis/gateway.md)
+
+## Advanced
+
+* [Advanced dWebsite Topics](advanced/README.md)
+* [ENS Subdomains and CCIP](advanced/ens-subdomains-ccip.md)
+* [Registry vs Resolver](advanced/registry-vs-resolver.md)
+* [Record Types](advanced/record-types.md)
+* [Alternatives to IPFS](advanced/alternatives-to-ipfs.md)
+* [Arweave and ArNS](advanced/arweave-arns.md)

@@ -172,6 +172,9 @@ import { Bee } from '@ethersphere/bee-js';
 
 const bee = new Bee('http://localhost:1633');
 
+// Note: Verify Swarm Bee version and API compatibility
+// Check: https://docs.ethswarm.org/docs/
+
 // Upload file
 async function uploadToSwarm(file) {
     const fileData = await file.arrayBuffer();

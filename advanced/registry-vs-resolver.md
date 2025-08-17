@@ -201,14 +201,21 @@ async function resolveENS(domainName, recordType) {
 ### Example: Setting Up a dWebsite
 
 ```javascript
+// Current Public Resolver addresses (verify with ENS documentation)
+const PUBLIC_RESOLVER_ADDRESSES = {
+  mainnet: '0x4976fb03C32e5B8cfe2b6cCB31c09Ba78EBaBa41',
+  goerli: '0x4B1488B7a6B320d2D721406204aBc3eeAa9AD329',
+  sepolia: '0x8FADE66B79cC9f707aB26799354482EB93a5B7dD'
+};
+
 // 1. Set resolver (Registry operation)
 await ensRegistry.setResolver(
     ethers.utils.namehash('mydomain.eth'),
-    publicResolverAddress
+    PUBLIC_RESOLVER_ADDRESSES.mainnet // Use appropriate network
 );
 
 // 2. Set content hash (Resolver operation)
-const resolver = new ethers.Contract(publicResolverAddress, RESOLVER_ABI, signer);
+const resolver = new ethers.Contract(PUBLIC_RESOLVER_ADDRESSES.mainnet, RESOLVER_ABI, signer);
 await resolver.setContenthash(
     ethers.utils.namehash('mydomain.eth'),
     ethers.utils.toUtf8Bytes('ipfs://QmYourWebsiteHash')

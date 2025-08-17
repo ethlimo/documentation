@@ -143,6 +143,9 @@ const MULTICODECS = {
     'skynet': 0x1b,
     'sia': 0x1c
 };
+
+// Note: Verify multicodec values with current multiformats specification
+// https://github.com/multiformats/multicodec/blob/master/table.csv
 ```
 
 ### Multiformat Encoding

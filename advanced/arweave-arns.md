@@ -38,6 +38,9 @@ const arweave = Arweave.init({
     protocol: 'https'
 });
 
+// Note: Verify Arweave SDK version and API compatibility
+// npm install arweave@latest
+
 // Generate a new wallet
 async function createWallet() {
     const wallet = await arweave.wallets.generate();

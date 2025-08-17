@@ -2,6 +2,16 @@
 
 This guide covers how to run your own IPFS node for complete control over your dWebsite hosting and IPNS publishing, including republishing strategies and TTL management.
 
+## ⚠️ Version Compatibility Note
+
+**Important:** This guide provides general workflows and concepts. Specific commands and configuration options may vary based on your IPFS version. Always verify commands with your current installation:
+
+```bash
+ipfs --version
+```
+
+For the most up-to-date command reference, visit: https://docs.ipfs.io/reference/cli/
+
 ## Why Run Your Own IPFS Node?
 
 Running your own IPFS node provides several advantages:
@@ -81,6 +91,9 @@ ipfs key gen my-website
 
 # List your keys
 ipfs key list -l
+
+# Note: Verify command syntax with your IPFS version
+# ipfs --version
 ```
 
 ### Publishing Content to IPNS
@@ -148,6 +161,8 @@ ipfs name publish --key=my-website --ttl=7d /ipfs/QmYourWebsiteCID
 - **24 hours**: For moderately updated content  
 - **7 days**: For stable content
 - **30 days**: For rarely updated content
+
+> **Note:** TTL values may vary based on IPFS version and network conditions. Test with your specific setup.
 
 ## Advanced Configuration
 

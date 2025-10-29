@@ -2,7 +2,15 @@
 
 #### Pinning services <a href="#pinning-services" id="pinning-services"></a>
 
-An easy way to make sure important data is retained is to use a pinning service. These services run lots of IPFS nodes and will _pin_ your data for you! This way, you don't have to run and maintain your own IPFS node. Check out the [Persistence page](https://docs.ipfs.tech/concepts/persistence/) for more information on pinning services. In this tutorial, we're going to use [Pinata (opens new window)](https://pinata.cloud/)since it gives new users 1GB of storage for free, and has a very simple interface:
+An easy way to make sure important data is retained is to use a pinning service. These services run lots of IPFS nodes and will _pin_ your data for you! This way, you don't have to run and maintain your own IPFS node. Check out the [Persistence page](https://docs.ipfs.tech/concepts/persistence/) for more information on pinning services. 
+
+**4Everland** <a href="#4everland" id="4everland"></a>
+
+1. Go to [dashboard.4everland.org](https://dashboard.4everland.org) and sign up or log in.
+2. Follow the [instructions](https://docs.4everland.org/hositng/guides/creating-a-deployment) to create a new deployment.
+3. Setup your site [configuration](https://docs.4everland.org/hositng/guides/site-deployment).
+
+**Pinata** <a href="#pinata" id="pinata"></a>
 
 1. Go to [Pinata.cloud (opens new window)](https://pinata.cloud/)and sign up or log in.
 2. Select **Upload** and click **Browse**.

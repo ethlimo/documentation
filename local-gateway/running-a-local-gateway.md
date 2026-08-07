@@ -132,6 +132,10 @@ A Swarm light-client gateway ([bee](https://github.com/ethersphere/bee)) is incl
 | ------- | ----------- |
 | `https://{swarm_cid}.swarm.localhost` | Swarm hash |
 
+### TON Sites (experimental)
+
+The resolver ships with TON Site (`adnl://`) content hash support enabled, but the RLDP-HTTP proxy container is not configured by default — see [TON Sites](../ton/ton-sites.md) for how it works and how to enable it. Once configured, sites are served at `https://{adnl_address}.adnl.localhost`.
+
 ### DNS-over-HTTPS
 
 Just like the public [eth.limo DoH resolver](../introduction/what-is-eth.limo/gateway-basics/dns-over-https.md), your local gateway exposes a DoH endpoint that extends native ENS resolution to any application supporting DNS-over-HTTPS. It also doubles as a handy lookup tool for decoded content hash records:

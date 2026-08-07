@@ -188,6 +188,8 @@ async function uploadDirectory(files) {
 }
 ```
 
+See [Hosting on Swarm](../swarm/hosting-on-swarm.md) for the full publishing guide, including the managed Beeport interface.
+
 #### 5. ENS Integration
 
 ```javascript

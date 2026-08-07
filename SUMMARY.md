@@ -47,6 +47,10 @@
 ## IPNS Publishing
 * [How to Publish to IPNS](ipns-publishing/how-to-publish-to-ipns.md)
 
+## Swarm
+
+* [Hosting on Swarm](swarm/hosting-on-swarm.md)
+
 ## Intermediate
 
 * [Using eth.limo with IPFS (Kubo)](intermediate/using-eth.limo-with-ipfs-kubo.md)
@@ -60,6 +64,7 @@
 
 * [.ART Resolution](.art-resolution.md)
 * [.gno Resolution](./gnosis/gateway.md)
+* [TON Sites](ton/ton-sites.md)
 
 ## Advanced
 
@@ -70,3 +75,7 @@
 * [Alternatives to IPFS](advanced/alternatives-to-ipfs.md)
 * [Arweave and ArNS](advanced/arweave-arns.md)
 * [On-Chain Data URLs and ENS Hooks](advanced/onchain-data-urls.md)
+
+## Support
+
+* [Troubleshooting](troubleshooting.md)

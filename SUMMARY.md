@@ -76,7 +76,7 @@
 * [Alternatives to IPFS](advanced/alternatives-to-ipfs.md)
 * [Arweave and ArNS](advanced/arweave-arns.md)
 * [On-Chain Data URLs and ENS Hooks](advanced/onchain-data-urls.md)
-* [ENSv2 and Namechain](advanced/ensv2.md)
+* [ENSv2](advanced/ensv2.md)
 
 ## Support
 

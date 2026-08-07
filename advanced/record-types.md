@@ -7,7 +7,7 @@ This guide covers the various record types supported by ENS, with a focus on con
 ENS supports multiple record types that can be stored and resolved for each domain:
 
 - **Address Records**: Ethereum and other cryptocurrency addresses
-- **Contenthash Records**: Content addressing (IPFS, IPNS, Arweave, etc.)
+- **Contenthash Records**: Content addressing (IPFS, IPNS, Arweave, on-chain data URLs, etc.)
 - **Text Records**: Key-value pairs for metadata
 - **Custom Records**: Application-specific data
 
@@ -33,6 +33,10 @@ Contenthash records use a standardized format that includes:
 | IPNS | `0xe5` | `ipns://k51...` |
 | Arweave | `0x6b` | `ar://...` |
 | Swarm | `0x7b` | `bzz://...` |
+| EIP-8121 hook | `0x30009b` | On-chain contract call returning a data URL |
+| Data URI | `0x3000f2` | `data:...` embedded directly in the contenthash |
+
+For hook and data URI contenthashes, see [On-Chain Data URLs and ENS Hooks](onchain-data-urls.md).
 
 ### Setting Contenthash Records
 

@@ -9,6 +9,7 @@ While IPFS is a popular choice for dWebsites, there are several other decentrali
 | IPFS | Temporary (unless pinned) | Free (with pinning costs) | Content distribution |
 | Arweave | Permanent | One-time payment | Permanent storage |
 | Swarm | Temporary | Free | Web3 infrastructure |
+| On-chain Data URLs (ENS hooks) | Permanent (on-chain) | Gas per byte | Small, high-value artifacts |
 | Sia | Permanent | Ongoing rental | Enterprise storage |
 | Skynet | Permanent | One-time payment | Decentralized apps |
 | Filecoin | Permanent | Ongoing rental | IPFS incentivization |
@@ -209,6 +210,20 @@ async function setSwarmContenthash(domain, swarmHash) {
 }
 ```
 
+## On-Chain Data URLs (ENS Hooks)
+
+Rather than referencing a storage network at all, content can be stored directly on chain and served from a smart contract via an [EIP-8121](https://ethereum-magicians.org/t/erc-8121-delegated-metadata-resolution-via-hooks/27424) hook in the ENS contenthash.
+
+### Key Features
+
+- **No Storage Network**: The blockchain is the storage layer — no pinning, deals, or postage stamps
+- **Self-Describing Resolution**: The contenthash specifies the exact contract call (function, parameters, contract, chain) that returns the content
+- **Cross-Chain**: Content can live on any EVM chain, resolved via CCIP-Read (ERC-3668)
+- **Updatable**: Change the contract's stored data without touching the contenthash
+- **Size-Constrained**: Gas pricing makes it practical only for small artifacts (~5KB or less)
+
+See [On-Chain Data URLs and ENS Hooks](onchain-data-urls.md) for the concepts, and the [ens-hooks encoding guide](https://github.com/ethlimo/ens-hooks/blob/main/docs/guide.md) for a publishing walkthrough.
+
 ## Sia
 
 Sia is a decentralized storage platform that allows users to rent storage space from hosts.
@@ -391,6 +406,12 @@ async function uploadToFilecoin(file) {
 - You need privacy features
 - You want to contribute to Ethereum's storage layer
 
+#### Choose On-Chain Data URLs (ENS hooks) when:
+- Your artifact is small (roughly 5KB or less)
+- You want availability tied only to the chain itself — no pinning or renewal
+- You need to update content by changing contract state
+- Your data is already on chain or needs cross-chain resolution (credentials, registries, metadata)
+
 #### Choose Sia when:
 - You need enterprise-grade storage
 - You want fine-grained control over redundancy
@@ -543,5 +564,6 @@ async function setMultiProtocolContent(domain, contentRefs) {
 With knowledge of storage alternatives, explore:
 
 - [Arweave and ArNS](arweave-arns.md) - Deep dive into permanent storage
+- [On-Chain Data URLs and ENS Hooks](onchain-data-urls.md) - Serving content directly from smart contracts
 - [ENS Subdomains and CCIP](ens-subdomains-ccip.md) - Advanced ENS features
 - [Record Types](record-types.md) - Understanding ENS record systems

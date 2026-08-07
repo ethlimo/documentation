@@ -20,6 +20,7 @@ This section covers advanced concepts and techniques for building sophisticated 
 - [Record Types](record-types.md) - Contenthash, TXT records, and multiformats
 - [Alternatives to IPFS](alternatives-to-ipfs.md) - Other decentralized storage solutions
 - [Arweave and ArNS](arweave-arns.md) - Permanent storage and naming system
+- [On-Chain Data URLs and ENS Hooks](onchain-data-urls.md) - Serving content directly from smart contracts (EIP-8121)
 
 ## Prerequisites
 

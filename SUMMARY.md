@@ -61,3 +61,4 @@
 * [Record Types](advanced/record-types.md)
 * [Alternatives to IPFS](advanced/alternatives-to-ipfs.md)
 * [Arweave and ArNS](advanced/arweave-arns.md)
+* [On-Chain Data URLs and ENS Hooks](advanced/onchain-data-urls.md)

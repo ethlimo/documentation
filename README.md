@@ -10,7 +10,7 @@ Storage protocol support includes: [IPFS](https://ipfs.tech/), [IPNS](https://do
 
 ### Want to run your own local gateway?
 
-Check out our API [repo](https://github.com/ethlimo/dweb-proxy-api) for instructions on how to set up your own local ENS gateway.
+Follow our [Running a Local Gateway](./local-gateway/running-a-local-gateway.md) guide to deploy the complete eth.limo stack on your own machine. The source code lives in the [dweb-proxy-api](https://github.com/ethlimo/dweb-proxy-api) repo.
 
 # What is ENS?
 

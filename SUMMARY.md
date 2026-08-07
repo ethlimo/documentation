@@ -44,6 +44,10 @@
 * [Using eth.limo with IPFS (Kubo)](intermediate/using-eth.limo-with-ipfs-kubo.md)
 * [Running Your Own IPFS Node and IPNS Publishing](intermediate/running-your-own-ipfs-node.md)
 
+## Local Gateway
+
+* [Running a Local Gateway](local-gateway/running-a-local-gateway.md)
+
 ***
 
 * [.ART Resolution](.art-resolution.md)

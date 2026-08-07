@@ -35,6 +35,8 @@
 * [4Everland](ipfs-pinning-providers/undefined/4everland.md)
   * [Using the 4Everland Public IPFS Gateway](ipfs-pinning-providers/undefined/using-the-4everland-public-ipfs-gateway.md)
   * [4Everland IPFS Pinning](ipfs-pinning-providers/undefined/4everland-ipfs-pinning.md)
+* [PinMe](ipfs-pinning-providers/undefined/pinme.md)
+  * [PinMe IPFS Pinning](ipfs-pinning-providers/undefined/pinme-ipfs-pinning.md)
 
 ## IPNS Publishing
 * [How to Publish to IPNS](ipns-publishing/how-to-publish-to-ipns.md)

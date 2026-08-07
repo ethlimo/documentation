@@ -10,6 +10,14 @@ An easy way to make sure important data is retained is to use a pinning service.
 2. Follow the [instructions](https://docs.4everland.org/hositng/guides/creating-a-deployment) to create a new deployment.
 3. Setup your site [configuration](https://docs.4everland.org/hositng/guides/site-deployment).
 
+**PinMe** <a href="#pinme" id="pinme"></a>
+
+1. Install the CLI: `npm install -g pinme`
+2. Authenticate with `pinme login`.
+3. Upload your site: `pinme upload ./dist` — the CLI returns the IPFS CID of your content.
+
+See our [PinMe guide](../../../ipfs-pinning-providers/undefined/pinme.md) for details.
+
 **Pinata** <a href="#pinata" id="pinata"></a>
 
 1. Go to [Pinata.cloud (opens new window)](https://pinata.cloud/)and sign up or log in.

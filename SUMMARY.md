@@ -3,6 +3,7 @@
 ## INTRODUCTION
 
 * [Overview](README.md)
+* [Quickstart: Launch Your dWebsite](quickstart.md)
 * [What is a dWebsite?](introduction/what-is-a-dwebsite.md)
 * [What is IPFS/IPNS?](introduction/what-is-ipfs-ipns.md)
 * [What is eth.limo?](introduction/what-is-eth.limo/README.md)
@@ -75,6 +76,7 @@
 * [Alternatives to IPFS](advanced/alternatives-to-ipfs.md)
 * [Arweave and ArNS](advanced/arweave-arns.md)
 * [On-Chain Data URLs and ENS Hooks](advanced/onchain-data-urls.md)
+* [ENSv2 and Namechain](advanced/ensv2.md)
 
 ## Support
 

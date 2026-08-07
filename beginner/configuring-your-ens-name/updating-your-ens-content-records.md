@@ -25,6 +25,15 @@ Then go to the Other tab
 Type in the IPFS CID you saved earlier into the Content field and then click Save\
 ​
 
+The content hash field accepts any supported storage protocol — enter your identifier with the matching prefix:
+
+| Protocol | Format | Where it comes from |
+| -------- | ------ | ------------------- |
+| IPFS | `ipfs://bafy...` | [Uploading to IPFS](../../beginner/how-to-use-ipfs-ipns/uploading-to-ipfs/README.md) |
+| IPNS | `ipns://k51...` | [How to Publish to IPNS](../../ipns-publishing/how-to-publish-to-ipns.md) |
+| Arweave / ArNS | `ar://<transaction-id>` | [Arweave and ArNS](../../advanced/arweave-arns.md) |
+| Swarm | `bzz://<64-hex-reference>` | [Hosting on Swarm](../../swarm/hosting-on-swarm.md) |
+
 <figure><img src="https://downloads.intercomcdn.com/i/o/739419317/c335fd501481068ee1857c6b/23.png?expires=1717974000&#x26;signature=6d2e5c34e80ebd2c3ef55444a0f07e2349dec3c3dd9c79580ba3583f3bf30216" alt=""><figcaption></figcaption></figure>
 
 Click Open Wallet and confirm the transaction in your wallet.

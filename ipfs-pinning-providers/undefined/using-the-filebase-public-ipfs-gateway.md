@@ -18,28 +18,7 @@ Gateways can also be used to serve static websites. The following URL leads to a
 
 `https://ipfs.filebase.io/ipfs/QmYRpH3myNKG2XeaBmdidec3R5HcF9PYBHUVHfks5ysTpq/`
 
-### Public IPFS Gateways vs Private IPFS Gateways <a href="#public-ipfs-gateways-vs-private-ipfs-gateways" id="public-ipfs-gateways-vs-private-ipfs-gateways"></a>
-
-Public gateways allow anyone to use HTTP to retrieve CIDs from the IPFS network. Filebase offers a public IPFS gateway with the following address:
-
-`https://ipfs.filebase.io/ipfs/<CID>/`
-
-There are two forms of private IPFS gateways: dedicated and self-hosted.
-
-Dedicated gateways are offered by IPFS pinning services that allow you to access the CIDs pinned on IPFS through the pinning service through your own private dedicated gateway. Dedicated gateways are typically not limited to traditional rate limits that public gateways are.
-
-Self-hosted gateways refer to an IPFS node that you host yourself, either in the cloud or on your local machine, that is configured to act as an IPFS gateway. Self-hosted gateways are not limited to rate limits either, but require IPFS to be running and managed by you for functionality. Many users choose an IPFS pinning service that offers dedicated gateways so they can avoid hosting and maintaining IPFS nodes themselves.
-
-## IPFS HTTP Gateway Process <a href="#ipfs-http-gateway-process" id="ipfs-http-gateway-process"></a>
-
-<figure><img src="https://docs.filebase.com/~gitbook/image?url=https%3A%2F%2F3861818989-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F-Lyjw7dWpiQtUFDa1pO0%252Fuploads%252FP2aBEitxRHO7ZvuFwJvk%252Fimage.png%3Falt%3Dmedia%26token%3Da2788733-ed8e-4f1b-a754-4ec881b84df3&#x26;width=768&#x26;dpr=4&#x26;quality=100&#x26;sign=0dde8f4ba7e01cfd873b739c39f4db45b739f0f12842486a93c4099f08f61714" alt=""><figcaption></figcaption></figure>
-
-When a request for a CID is initiated using an IPFS HTTP gateway, the following steps occur:
-
-1. The gateway checks if the CID has been cached locally before it attempts to retrieve it from the IPFS network. The cache can either be the local HTTP cache, or the cache of the IPFS gateway node.
-2. If the CID hasn’t been cached, the CID will need to be retrieved from the IPFS network.
-3. The IPFS peer will first ask its direct peers if any of them are hosting the requested CID, then it will query the DHT to find peer IDs and network addresses of peers that are currently hosting or pinning the requested CID.
-4. The IPFS gateway node will connect to one of the peers with the CID, fetch the CID’s content, then relay the response to the client that requested the CID.
+For background on how gateways retrieve content and the difference between public, dedicated, and self-hosted gateways, see [IPFS Gateways](../../ipfs/ipfs-gateways.md).
 
 ## Creating a Dedicated Gateway <a href="#creating-a-dedicated-gateway" id="creating-a-dedicated-gateway"></a>
 
@@ -175,41 +154,31 @@ Filebase provides an image optimization functionality directly through the Fileb
 
 Through this feature, image load time and the overall image experience can be improved.
 
-Any image file that is uploaded to Filebase can be manipulated through query string parameters. ‌The query string options are defined as follows.
-
-**Image Optimization Options ‌**
-
-To utilize image optimization, at least one option must be specified.
-
-These parameters can be added to the URL of the image, file. For example:
-
-If the default image URL is:
-
-`https://documentation.myfilebase.com/ipfs/QmVnf5PnSUvjrPkc9tDgpwqcreKWh7xVyXDwDmS6xwchWp`
-
-#### Filebase IPFS Image Optimization
-
-Filebase offers image optimization through its IPFS gateway. You can manipulate image files using query string parameters:
+Any image file that is uploaded to Filebase can be manipulated through query string parameters. To utilize image optimization, at least one option must be specified:
 
 *   **Resize**:
 
-    ```css
+    ```
     ?img-width=300
     ```
 *   **Quality**:
 
-    ```css
+    ```
     ?img-quality=75
     ```
 *   **Format**:
 
-    ```arduino
+    ```
     ?img-format=auto
     ```
 
-For example:
+For example, if the default image URL is:
 
-```arduino
+`https://documentation.myfilebase.com/ipfs/QmVnf5PnSUvjrPkc9tDgpwqcreKWh7xVyXDwDmS6xwchWp`
+
+the resized variant is:
+
+```
 https://documentation.myfilebase.com/ipfs/QmVnf5PnSUvjrPkc9tDgpwqcreKWh7xVyXDwDmS6xwchWp?img-width=300
 ```
 

@@ -271,7 +271,7 @@ ipfs stats repo
 With your own IPFS node running, you can:
 
 - [Configure your ENS domain](../beginner/configuring-your-ens-name/README.md)
-- [Set up automated publishing workflows](how-to-publish-to-ipns.md)
+- [Set up automated publishing workflows](../ipns-publishing/how-to-publish-to-ipns.md)
 - [Explore advanced IPFS features](../advanced/)
 
 ## Resources

@@ -33,3 +33,9 @@ Together, IPFS and IPNS empower users to take control of their online content, f
 ### Conclusion
 
 IPNS and IPFS are building blocks for a web where users control their data and can rely on resilient, efficient access to content.&#x20;
+
+### Learn More
+
+* [What is IPFS Pinning?](../ipfs/what-is-ipfs-pinning.md) — why content must be pinned to stay available
+* [IPFS Gateways](../ipfs/ipfs-gateways.md) — how HTTP access to IPFS works
+* [How to use IPFS/IPNS](../beginner/how-to-use-ipfs-ipns/README.md) — hands-on guides

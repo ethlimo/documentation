@@ -134,7 +134,7 @@ A Swarm light-client gateway ([bee](https://github.com/ethersphere/bee)) is incl
 
 ### DNS-over-HTTPS
 
-Just like the public [eth.limo DoH resolver](../dns-over-https/doh.md), your local gateway exposes a DoH endpoint that extends native ENS resolution to any application supporting DNS-over-HTTPS. It also doubles as a handy lookup tool for decoded content hash records:
+Just like the public [eth.limo DoH resolver](../introduction/what-is-eth.limo/gateway-basics/dns-over-https.md), your local gateway exposes a DoH endpoint that extends native ENS resolution to any application supporting DNS-over-HTTPS. It also doubles as a handy lookup tool for decoded content hash records:
 
 ```bash
 $ curl 'https://dns.eth.localhost/dns-query?name=ens.eth'

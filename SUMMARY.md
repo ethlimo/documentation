@@ -27,6 +27,11 @@
     * [Understanding Content Hashes, IPNS, and IPFS for ENS](beginner/configuring-your-ens-name/content-hash-overview/understanding-content-hashes-ipns-and-ipfs-for-ens.md)
     * [Understanding IPFS Content Identifiers (CIDs)](beginner/configuring-your-ens-name/content-hash-overview/understanding-ipfs-content-identifiers-cids.md)
 
+## IPFS
+
+* [What is IPFS Pinning?](ipfs/what-is-ipfs-pinning.md)
+* [IPFS Gateways](ipfs/ipfs-gateways.md)
+
 ## IPFS Pinning Providers
 
 * [Filebase](ipfs-pinning-providers/undefined/README.md)

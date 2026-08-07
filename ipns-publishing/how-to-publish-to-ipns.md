@@ -38,5 +38,7 @@ Production ready configurations for self-hosting are outside of the scope of thi
     ipfs name publish <CID>
     ```
 
-Step 6 will return an IPNS public key record type that looks like `k51...` (truncated). You can then use this IPNS public key as your ENS domain's contentHash, which will associate it with the CID produced in step 4. You can repeate these steps whenever you need to update the content, and the IPNS record will point to the latest CID.
+Step 6 will return an IPNS public key record type that looks like `k51...` (truncated). You can then use this IPNS public key as your ENS domain's contentHash, which will associate it with the CID produced in step 4. You can repeat these steps whenever you need to update the content, and the IPNS record will point to the latest CID.
+
+For a more complete self-hosting walkthrough, including republishing strategies and TTL management, see [Running Your Own IPFS Node and IPNS Publishing](../intermediate/running-your-own-ipfs-node.md).
 

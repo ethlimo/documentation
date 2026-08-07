@@ -2,7 +2,7 @@
 
 #### Pinning services <a href="#pinning-services" id="pinning-services"></a>
 
-An easy way to make sure important data is retained is to use a pinning service. These services run lots of IPFS nodes and will _pin_ your data for you! This way, you don't have to run and maintain your own IPFS node. Check out the [Persistence page](https://docs.ipfs.tech/concepts/persistence/) for more information on pinning services. 
+An easy way to make sure important data is retained is to use a pinning service. These services run lots of IPFS nodes and will _pin_ your data for you! This way, you don't have to run and maintain your own IPFS node. See [What is IPFS Pinning?](../../../ipfs/what-is-ipfs-pinning.md) for why pinning is necessary, and the [Persistence page](https://docs.ipfs.tech/concepts/persistence/) for more information on pinning services.
 
 **4Everland** <a href="#4everland" id="4everland"></a>
 

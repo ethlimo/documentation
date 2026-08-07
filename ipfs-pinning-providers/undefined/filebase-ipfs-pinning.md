@@ -1,24 +1,6 @@
 # Filebase IPFS Pinning
 
-### What is IPFS Pinning? <a href="#what-is-ipfs-pinning" id="what-is-ipfs-pinning"></a>
-
-IPFS pinning refers to the process of specifying data to be retained and persist on one or more IPFS nodes. Pinning assures that data is accessible indefinitely, and will not be removed during the IPFS garbage collection process.
-
-#### Understanding the Garbage Collection Process <a href="#understanding-the-garbage-collection-process" id="understanding-the-garbage-collection-process"></a>
-
-When files and data are stored on the IPFS network, nodes on the network cache the files that they download and keep those files available for other nodes on the network. Since storage on these nodes is finite, the cache for each node must be cleared periodically to make room for new files to be cached and made available. The process of clearing the cache for IPFS nodes is referred to as the IPFS garbage collection process.
-
-Garbage collection is an automatic process that is used to manage resources, such as IPFS node disk space. The process is designed to remove cached data that it thinks is no longer needed, though if your IPFS CID refers to a file that is vital to your workflow or environment, having this file removed can be detrimental. So how do you prevent your file from being removed during this process?
-
-#### IPFS Pinning <a href="#ipfs-pinning" id="ipfs-pinning"></a>
-
-To protect data from the garbage collection process, data must be pinned on the IPFS network. This ensures that data is retained indefinitely and is always accessible. Pinning is useful for a variety of workflows, such as accessing data files from around the world without managing sharing permissions. All data uploaded to IPFS is public by default since all you need to access it is the file’s CID. There are no permissions, user accounts, or other security settings tied to IPFS CIDs.
-
-One of the most popular workflows utilizing IPFS pinning right now are NFT collections. These collections have a variety of files involved, including NFT image files and their associated metadata files. If these files aren’t pinned on IPFS and they get removed by the IPFS garbage collection process, this can result in an “NFT Rug Pull”, which means that the NFT ceases to exist, and is no longer accessible or transferable.
-
-#### Pinning Services <a href="#pinning-services" id="pinning-services"></a>
-
-IPFS pinning can be configured on locally hosted IPFS nodes, but for external, long-term storage, that’s where pinning services such as Filebase come in.
+New to pinning? See [What is IPFS Pinning?](../../ipfs/what-is-ipfs-pinning.md) for the concepts — garbage collection, why pinning is required, and when to use a pinning service.
 
 ### How To Pin New Data on IPFS With Filebase <a href="#how-to-pin-new-data-on-ipfs-with-filebase" id="how-to-pin-new-data-on-ipfs-with-filebase"></a>
 

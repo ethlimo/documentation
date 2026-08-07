@@ -23,6 +23,6 @@ For dWebsites this matters directly: if the CID referenced by your ENS content h
 You have two options for keeping content pinned:
 
 1. **Pin on your own node** — configure pinning on a locally hosted IPFS node. See [Running Your Own IPFS Node and IPNS Publishing](../intermediate/running-your-own-ipfs-node.md).
-2. **Use a pinning service** — services run many IPFS nodes and pin your data for you, providing external, long-term persistence without maintaining infrastructure. See our [IPFS Pinning Providers](../ipfs-pinning-providers/undefined/README.md) guides for [Filebase](../ipfs-pinning-providers/undefined/README.md), [4Everland](../ipfs-pinning-providers/undefined/4everland.md), and [PinMe](../ipfs-pinning-providers/undefined/pinme.md), or the beginner-level [Hosting using a pinning service](../beginner/how-to-use-ipfs-ipns/uploading-to-ipfs/hosting-using-a-pinning-service.md).
+2. **Use a pinning service** — services run many IPFS nodes and pin your data for you, providing external, long-term persistence without maintaining infrastructure. See our provider guides for [Filebase](../ipfs-pinning-providers/filebase.md), [4Everland](../ipfs-pinning-providers/4everland.md), [Pinata](../ipfs-pinning-providers/pinata.md), and [PinMe](../ipfs-pinning-providers/pinme.md), or the beginner-level [Hosting using a pinning service](../beginner/how-to-use-ipfs-ipns/uploading-to-ipfs/hosting-using-a-pinning-service.md).
 
 For more background, see the IPFS project's [Persistence documentation](https://docs.ipfs.tech/concepts/persistence/).

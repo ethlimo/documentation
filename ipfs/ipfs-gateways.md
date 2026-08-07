@@ -24,7 +24,7 @@ When a request for a CID reaches an IPFS HTTP gateway:
 
 ### Public vs Private Gateways
 
-**Public gateways** allow anyone to use HTTP to retrieve CIDs from the IPFS network. They are typically rate-limited and may restrict certain content types to prevent abuse (see our provider pages for the [Filebase](../ipfs-pinning-providers/undefined/using-the-filebase-public-ipfs-gateway.md) and [4Everland](../ipfs-pinning-providers/undefined/using-the-4everland-public-ipfs-gateway.md) public gateways).
+**Public gateways** allow anyone to use HTTP to retrieve CIDs from the IPFS network. They are typically rate-limited and may restrict certain content types to prevent abuse (see our provider pages for the [Filebase](../ipfs-pinning-providers/using-the-filebase-public-ipfs-gateway.md) and [4Everland](../ipfs-pinning-providers/using-the-4everland-public-ipfs-gateway.md) public gateways).
 
 **Private gateways** come in two forms:
 

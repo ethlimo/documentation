@@ -1,6 +1,6 @@
 # Filebase IPFS Pinning
 
-New to pinning? See [What is IPFS Pinning?](../../ipfs/what-is-ipfs-pinning.md) for the concepts — garbage collection, why pinning is required, and when to use a pinning service.
+New to pinning? See [What is IPFS Pinning?](../ipfs/what-is-ipfs-pinning.md) for the concepts — garbage collection, why pinning is required, and when to use a pinning service.
 
 ### How To Pin New Data on IPFS With Filebase <a href="#how-to-pin-new-data-on-ipfs-with-filebase" id="how-to-pin-new-data-on-ipfs-with-filebase"></a>
 

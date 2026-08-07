@@ -16,7 +16,7 @@ An easy way to make sure important data is retained is to use a pinning service.
 2. Authenticate with `pinme login`.
 3. Upload your site: `pinme upload ./dist` — the CLI returns the IPFS CID of your content.
 
-See our [PinMe guide](../../../ipfs-pinning-providers/undefined/pinme.md) for details.
+See our [PinMe guide](../../../ipfs-pinning-providers/pinme.md) for details.
 
 **Pinata** <a href="#pinata" id="pinata"></a>
 
@@ -30,5 +30,7 @@ See our [PinMe guide](../../../ipfs-pinning-providers/undefined/pinme.md) for de
 6.  Click your `index.html` file to open your website through the Pinata gateway.
 
     ![Random planet fact website pinned using Pinata and displayed in Firefox](https://docs.ipfs.tech/assets/img/pinned-random-planet-fact-website.26288975.png)
+
+See our [Pinata guide](../../../ipfs-pinning-providers/pinata.md) for details, including SDK/API uploads and pinning existing CIDs.
 
 ### &#x20;<a href="#set-up-a-domain" id="set-up-a-domain"></a>

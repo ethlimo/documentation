@@ -141,11 +141,7 @@ const MULTICODECS = {
     'arweave': 0x6b,
     
     // Swarm
-    'swarm': 0x7b,
-    
-    // Other systems
-    'skynet': 0x1b,
-    'sia': 0x1c
+    'swarm': 0x7b
 };
 
 // Note: Verify multicodec values with current multiformats specification

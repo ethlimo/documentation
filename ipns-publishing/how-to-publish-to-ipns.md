@@ -14,31 +14,7 @@ While there are many excellent hosted services available, we typically recommend
 
 ### Self-Hosting IPNS
 
-Production ready configurations for self-hosting are outside of the scope of this guide, but if you want to run your own IPFS node for publishing IPNS records, you can follow these steps:
+If you want to run your own IPFS node for publishing IPNS records, follow [Running Your Own IPFS Node and IPNS Publishing](../intermediate/running-your-own-ipfs-node.md) — it covers the full workflow (installing Kubo, adding and pinning content, `ipfs name publish`) along with republishing strategies and TTL management.
 
-1. Download and install [Kubo](https://github.com/ipfs/kubo/).
-2. Initialize your IPFS node:
-   ```bash
-   ipfs init --profile server
-   ```
-3. Start your IPFS node:
-   ```bash
-   ipfs daemon
-   ```
-4. Generate a CID for your content:
-    ```bash
-    ipfs add --cid-version 1 <file|directory>
-    ```
-5. Pin the CID produced in the previous step:
-   ```bash
-   ipfs pin add <CID>
-   ```
-6. Associate the CID with an IPNS public key:
-    ```bash
-    ipfs name publish <CID>
-    ```
-
-Step 6 will return an IPNS public key record type that looks like `k51...` (truncated). You can then use this IPNS public key as your ENS domain's contentHash, which will associate it with the CID produced in step 4. You can repeat these steps whenever you need to update the content, and the IPNS record will point to the latest CID.
-
-For a more complete self-hosting walkthrough, including republishing strategies and TTL management, see [Running Your Own IPFS Node and IPNS Publishing](../intermediate/running-your-own-ipfs-node.md).
+In short: publishing returns an IPNS public key that looks like `k51...` (truncated), which you set as your ENS domain's contentHash. Whenever your content changes, you republish the new CID under the same key — the IPNS record points to the latest CID and your ENS record never needs to change.
 

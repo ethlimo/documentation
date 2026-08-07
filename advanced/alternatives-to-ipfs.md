@@ -10,8 +10,6 @@ While IPFS is a popular choice for dWebsites, there are several other decentrali
 | Arweave | Permanent | One-time payment | Permanent storage |
 | Swarm | Temporary | Free | Web3 infrastructure |
 | On-chain Data URLs (ENS hooks) | Permanent (on-chain) | Gas per byte | Small, high-value artifacts |
-| Sia | Permanent | Ongoing rental | Enterprise storage |
-| Skynet | Permanent | One-time payment | Decentralized apps |
 | Filecoin | Permanent | Ongoing rental | IPFS incentivization |
 
 ## Arweave
@@ -224,113 +222,6 @@ Rather than referencing a storage network at all, content can be stored directly
 
 See [On-Chain Data URLs and ENS Hooks](onchain-data-urls.md) for the concepts, and the [ens-hooks encoding guide](https://github.com/ethlimo/ens-hooks/blob/main/docs/guide.md) for a publishing walkthrough.
 
-## Sia
-
-Sia is a decentralized storage platform that allows users to rent storage space from hosts.
-
-### Key Features
-
-- **Rental Model**: Pay for storage on a per-month basis
-- **Redundancy**: Data is automatically split and distributed
-- **Encryption**: All data is encrypted by default
-- **Enterprise Focus**: Designed for large-scale storage needs
-
-### Getting Started with Sia
-
-#### 1. Install Sia
-
-```bash
-# Download Sia
-wget https://sia.tech/releases/Sia-v1.5.7-linux-amd64.zip
-unzip Sia-v1.5.7-linux-amd64.zip
-
-# Start Sia daemon
-./siad
-```
-
-#### 2. Upload Content
-
-```bash
-# Create a wallet
-siac wallet init
-
-# Upload files
-siac renter upload ./website/index.html website/index.html
-siac renter upload ./website/style.css website/style.css
-```
-
-#### 3. JavaScript Integration
-
-```javascript
-import { SiaClient } from 'sia-client';
-
-const sia = new SiaClient({
-    host: 'localhost:9980'
-});
-
-// Upload file
-async function uploadToSia(filePath, siaPath) {
-    const fileBuffer = await fs.readFile(filePath);
-    await sia.renter.upload(fileBuffer, siaPath);
-}
-
-// Download file
-async function downloadFromSia(siaPath, localPath) {
-    const fileData = await sia.renter.download(siaPath);
-    await fs.writeFile(localPath, fileData);
-}
-```
-
-## Skynet
-
-Skynet is a decentralized CDN and file sharing platform built on Sia.
-
-### Key Features
-
-- **CDN-like Performance**: Fast global content delivery
-- **Permanent Storage**: One-time payment for permanent storage
-- **Portal Network**: Multiple portals for redundancy
-- **Developer-Friendly**: Simple API for integration
-
-### Getting Started with Skynet
-
-#### 1. Upload Content
-
-```javascript
-import { SkynetClient } from 'skynet-js';
-
-const client = new SkynetClient();
-
-// Upload a file
-async function uploadToSkynet(file) {
-    const skylink = await client.uploadFile(file);
-    return skylink;
-}
-
-// Upload a directory
-async function uploadDirectory(files) {
-    const skylink = await client.uploadDirectory(files);
-    return skylink;
-}
-```
-
-#### 2. ENS Integration
-
-```javascript
-// Set Skynet content hash in ENS
-async function setSkynetContenthash(domain, skylink) {
-    const resolver = new ethers.Contract(resolverAddress, RESOLVER_ABI, signer);
-    const node = ethers.utils.namehash(domain);
-    
-    // Store Skynet link as TXT record
-    await resolver.setText(node, 'skynet', skylink);
-    
-    // Or use custom resolver for contenthash
-    const encoded = encodeSkynetContenthash(skylink);
-    await resolver.setContenthash(node, encoded);
-}
-```
-
 ## Filecoin
 
 Filecoin is a decentralized storage network that incentivizes IPFS storage.
@@ -412,18 +303,6 @@ async function uploadToFilecoin(file) {
 - You need to update content by changing contract state
 - Your data is already on chain or needs cross-chain resolution (credentials, registries, metadata)
 
-#### Choose Sia when:
-- You need enterprise-grade storage
-- You want fine-grained control over redundancy
-- You're building applications with large storage requirements
-- You need encryption by default
-
-#### Choose Skynet when:
-- You need CDN-like performance
-- You want simple developer APIs
-- You need permanent storage with one-time payment
-- You're building web applications
-
 #### Choose Filecoin when:
 - You want IPFS with economic incentives
 - You need verifiable storage proofs
@@ -440,8 +319,7 @@ class MultiProtocolStorage {
         this.protocols = {
             ipfs: new IPFSClient(),
             arweave: new ArweaveClient(),
-            swarm: new SwarmClient(),
-            skynet: new SkynetClient()
+            swarm: new SwarmClient()
         };
     }
     
@@ -491,10 +369,6 @@ async function setMultiProtocolContent(domain, contentRefs) {
     if (contentRefs.swarm) {
         await resolver.setText(node, 'swarm', contentRefs.swarm);
     }
-    
-    if (contentRefs.skynet) {
-        await resolver.setText(node, 'skynet', contentRefs.skynet);
-    }
 }
 ```
 
@@ -507,8 +381,6 @@ async function setMultiProtocolContent(domain, contentRefs) {
 | IPFS | Free (with pinning) | $5-20 (pinning service) |
 | Arweave | One-time | $0.50-1.00 (permanent) |
 | Swarm | Free | $0 (incentivized) |
-| Sia | Monthly rental | $2-5/month |
-| Skynet | One-time | $0.50-1.00 (permanent) |
 | Filecoin | Market rate | $1-3/month |
 
 ### Cost Optimization Strategies
@@ -547,16 +419,12 @@ async function setMultiProtocolContent(domain, contentRefs) {
 
 - [Arweave JS](https://github.com/ArweaveTeam/arweave-js)
 - [Swarm Bee](https://github.com/ethersphere/bee)
-- [Sia Client](https://github.com/SiaFoundation/siad)
-- [Skynet JS](https://github.com/SkynetLabs/skynet-js)
 - [Filecoin Lotus](https://github.com/filecoin-project/lotus)
 
 ### Documentation
 
 - [Arweave Documentation](https://docs.arweave.org/)
 - [Swarm Documentation](https://docs.ethswarm.org/)
-- [Sia Documentation](https://sia.tech/docs/)
-- [Skynet Documentation](https://siasky.net/docs/)
 - [Filecoin Documentation](https://docs.filecoin.io/)
 
 ## Next Steps

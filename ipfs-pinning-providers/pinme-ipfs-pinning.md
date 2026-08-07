@@ -45,7 +45,7 @@ Optional domain binding takes 1–2 minutes to propagate.
 
 ### Using Your CID with ENS
 
-Once the upload completes, copy the returned CID and set it as the content hash of your ENS name (see [Updating Your ENS Content Records](../../beginner/configuring-your-ens-name/updating-your-ens-content-records.md)). Your dWebsite is then reachable through any ENS gateway:
+Once the upload completes, copy the returned CID and set it as the content hash of your ENS name (see [Updating Your ENS Content Records](../beginner/configuring-your-ens-name/updating-your-ens-content-records.md)). Your dWebsite is then reachable through any ENS gateway:
 
 ```
 https://yourname.eth.limo

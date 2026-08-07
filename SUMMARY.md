@@ -34,14 +34,15 @@
 
 ## IPFS Pinning Providers
 
-* [Filebase](ipfs-pinning-providers/undefined/README.md)
-  * [Using the Filebase Public IPFS Gateway](ipfs-pinning-providers/undefined/using-the-filebase-public-ipfs-gateway.md)
-  * [Filebase IPFS Pinning](ipfs-pinning-providers/undefined/filebase-ipfs-pinning.md)
-* [4Everland](ipfs-pinning-providers/undefined/4everland.md)
-  * [Using the 4Everland Public IPFS Gateway](ipfs-pinning-providers/undefined/using-the-4everland-public-ipfs-gateway.md)
-  * [4Everland IPFS Pinning](ipfs-pinning-providers/undefined/4everland-ipfs-pinning.md)
-* [PinMe](ipfs-pinning-providers/undefined/pinme.md)
-  * [PinMe IPFS Pinning](ipfs-pinning-providers/undefined/pinme-ipfs-pinning.md)
+* [Filebase](ipfs-pinning-providers/filebase.md)
+  * [Using the Filebase Public IPFS Gateway](ipfs-pinning-providers/using-the-filebase-public-ipfs-gateway.md)
+  * [Filebase IPFS Pinning](ipfs-pinning-providers/filebase-ipfs-pinning.md)
+* [4Everland](ipfs-pinning-providers/4everland.md)
+  * [Using the 4Everland Public IPFS Gateway](ipfs-pinning-providers/using-the-4everland-public-ipfs-gateway.md)
+  * [4Everland IPFS Pinning](ipfs-pinning-providers/4everland-ipfs-pinning.md)
+* [Pinata](ipfs-pinning-providers/pinata.md)
+* [PinMe](ipfs-pinning-providers/pinme.md)
+  * [PinMe IPFS Pinning](ipfs-pinning-providers/pinme-ipfs-pinning.md)
 
 ## IPNS Publishing
 * [How to Publish to IPNS](ipns-publishing/how-to-publish-to-ipns.md)

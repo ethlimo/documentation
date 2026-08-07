@@ -18,7 +18,7 @@ Gateways can also be used to serve static websites. The following URL leads to a
 
 `https://ipfs.filebase.io/ipfs/QmYRpH3myNKG2XeaBmdidec3R5HcF9PYBHUVHfks5ysTpq/`
 
-For background on how gateways retrieve content and the difference between public, dedicated, and self-hosted gateways, see [IPFS Gateways](../../ipfs/ipfs-gateways.md).
+For background on how gateways retrieve content and the difference between public, dedicated, and self-hosted gateways, see [IPFS Gateways](../ipfs/ipfs-gateways.md).
 
 ## Creating a Dedicated Gateway <a href="#creating-a-dedicated-gateway" id="creating-a-dedicated-gateway"></a>
 

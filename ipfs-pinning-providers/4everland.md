@@ -9,4 +9,4 @@ description: Using the 4Everland Public IPFS Gateway & Pinning Service
 * [Using the 4Everland Public IPFS Gateway](using-the-4everland-public-ipfs-gateway.md) — gateway endpoints and rate limits
 * [4Everland IPFS Pinning](4everland-ipfs-pinning.md) — deploying and pinning your site
 
-New to pinning or gateways? Start with [What is IPFS Pinning?](../../ipfs/what-is-ipfs-pinning.md) and [IPFS Gateways](../../ipfs/ipfs-gateways.md).
+New to pinning or gateways? Start with [What is IPFS Pinning?](../ipfs/what-is-ipfs-pinning.md) and [IPFS Gateways](../ipfs/ipfs-gateways.md).

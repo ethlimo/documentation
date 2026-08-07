@@ -33,6 +33,7 @@ The content hash field accepts any supported storage protocol — enter your ide
 | IPNS | `ipns://k51...` | [How to Publish to IPNS](../../ipns-publishing/how-to-publish-to-ipns.md) |
 | Arweave / ArNS | `ar://<transaction-id>` | [Arweave and ArNS](../../advanced/arweave-arns.md) |
 | Swarm | `bzz://<64-hex-reference>` | [Hosting on Swarm](../../swarm/hosting-on-swarm.md) |
+| TON Sites | `adnl://<adnl-address>` | [TON Sites](../../ton/ton-sites.md) |
 
 <figure><img src="https://downloads.intercomcdn.com/i/o/739419317/c335fd501481068ee1857c6b/23.png?expires=1717974000&#x26;signature=6d2e5c34e80ebd2c3ef55444a0f07e2349dec3c3dd9c79580ba3583f3bf30216" alt=""><figcaption></figcaption></figure>
 

@@ -35,7 +35,7 @@ Codec values per the [multicodec table](https://github.com/multiformats/multicod
 | Swarm (`swarm-ns`) | `0xe4` | `bzz://...` |
 | IPNS (`ipns-ns`) | `0xe5` | `ipns://k51...` |
 | Arweave (`arweave-ns`) | `0xb29910` | `ar://...` |
-| TON (`adnl`) | `0xb69910` | `adnl://...` (experimental — see [TON Sites](../ton/ton-sites.md)) |
+| TON (`adnl`) | `0xb69910` | `adnl://...` — see [TON Sites](../ton/ton-sites.md) |
 | EIP-8121 hook | `0x30009b` | On-chain contract call returning a data URL (draft, not yet in the multicodec table) |
 | Data URI | `0x3000f2` | `data:...` embedded directly in the contenthash (draft, not yet in the multicodec table) |
 

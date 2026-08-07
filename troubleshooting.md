@@ -52,6 +52,7 @@ Full walkthrough: [Updating Your ENS Content Records](beginner/configuring-your-
    * `ipns://` — IPNS record
    * `ar://` — Arweave transaction / ArNS name
    * `bzz://` — Swarm reference
+   * `adnl://` — TON Site address
    * EIP-8121 hooks / data URLs — see [On-Chain Data URLs and ENS Hooks](advanced/onchain-data-urls.md)
 3. Check for common encoding mistakes: pasting a gateway URL (`https://ipfs.io/ipfs/...`) instead of a `ipfs://` URI, truncated values, or the wrong record field entirely.
 4. Update the record in the [ENS Manager](https://app.ens.domains/) and confirm the transaction.

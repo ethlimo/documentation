@@ -230,52 +230,34 @@ Filecoin is a decentralized storage network that incentivizes IPFS storage.
 
 ### Key Features
 
-- **IPFS Compatible**: Built on top of IPFS
-- **Incentivized Storage**: Miners earn FIL for storing data
+- **IPFS Compatible**: Built on top of IPFS — content is addressed by the same CIDs
+- **Incentivized Storage**: Storage providers earn FIL for provably storing data
 - **Proof of Storage**: Cryptographic proofs ensure data availability
 - **Marketplace**: Dynamic pricing based on supply and demand
 
-### Getting Started with Filecoin
+### Getting Started with Filecoin Pin
 
-#### 1. Install Lotus (Filecoin Node)
+The most direct path for dWebsites is [Filecoin Pin](https://docs.filecoin.io/build-on-filecoin/cookbook/filecoin-pin/getting-started), which combines Filecoin's paid, provable storage with standard IPFS retrieval: you pin a file to Filecoin and fetch it with ordinary IPFS tooling — so the resulting Root CID works as an `ipfs://` ENS content hash.
 
-```bash
-# Clone Lotus
-git clone https://github.com/filecoin-project/lotus.git
-cd lotus
-
-# Build Lotus
-make clean && make all
-
-# Start Lotus daemon
-./lotus daemon
-```
-
-#### 2. Upload Content
+You'll need an Ethereum-style wallet, FIL for gas, and USDFC (a stablecoin) for storage payments.
 
 ```bash
-# Import file
-lotus client import ./website/index.html
+# Install and verify
+npm install -g filecoin-pin@latest
+filecoin-pin --version
 
-# Make storage deal
-lotus client deal <data-cid> <miner-id> 0.0000000005 518400
+# Authorize spending and deposit USDFC (~10 USDFC to start)
+filecoin-pin payments setup
+
+# Pin content — stored with two providers for redundancy, returns a Root CID
+filecoin-pin add ./my-site
+
+# Verify storage proofs and payment status
+filecoin-pin data-set list
+filecoin-pin payments status
 ```
 
-#### 3. JavaScript Integration
-
-```javascript
-import { Filecoin } from '@filecoin-sdk/core';
-
-const filecoin = new Filecoin({
-    nodeUrl: 'http://localhost:1234/rpc/v0'
-});
-
-// Upload file
-async function uploadToFilecoin(file) {
-    const cid = await filecoin.client.import(file);
-    return cid;
-}
-```
+Retrieve the Root CID through any IPFS gateway, and set it as your ENS content hash (`ipfs://<root-cid>`) like any other IPFS deployment.
 
 ## Comparison and Selection Guide
 
@@ -421,7 +403,7 @@ async function setMultiProtocolContent(domain, contentRefs) {
 
 - [Arweave JS](https://github.com/ArweaveTeam/arweave-js)
 - [Swarm Bee](https://github.com/ethersphere/bee)
-- [Filecoin Lotus](https://github.com/filecoin-project/lotus)
+- [Filecoin Pin](https://docs.filecoin.io/build-on-filecoin/cookbook/filecoin-pin/getting-started)
 
 ### Documentation
 

@@ -23,10 +23,10 @@ The eth.limo gateway stack can resolve ENS names whose content hash points at a 
 adnl://<adnl-address>
 ```
 
-When TON support is enabled, the gateway resolves the record and proxies the request to the TON network through an RLDP-HTTP gateway, exactly as it proxies IPFS or Swarm content. The DoH resolver returns such records as `dnslink=adnl://<address>`.
+The gateway resolves the record and proxies the request to the TON network through an RLDP-HTTP gateway, exactly as it proxies IPFS or Swarm content. TON Site resolution is **live on the public eth.limo gateway**. The DoH resolver returns such records as `dnslink=adnl://<address>`.
 
-{% hint style="warning" %}
-TON Site resolution is **experimental**. In the [local gateway](../local-gateway/running-a-local-gateway.md) stack the resolver ships with TON support enabled (`TON_ENABLED=true`), but the RLDP-HTTP proxy container (`tonutils-proxy`) is not enabled by default — you must supply and uncomment a proxy image in `docker-compose.yml`. Once configured, TON Sites are served locally at `https://{adnl-address}.adnl.localhost`.
+{% hint style="info" %}
+In the [local gateway](../local-gateway/running-a-local-gateway.md) stack the resolver ships with TON support enabled (`TON_ENABLED=true`), but the RLDP-HTTP proxy container (`tonutils-proxy`) is not enabled by default — you must supply and uncomment a proxy image in `docker-compose.yml`. Once configured, TON Sites are served locally at `https://{adnl-address}.adnl.localhost`.
 {% endhint %}
 
 ## Hosting Your Own TON Site

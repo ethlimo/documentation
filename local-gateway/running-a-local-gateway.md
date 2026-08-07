@@ -132,9 +132,9 @@ A Swarm light-client gateway ([bee](https://github.com/ethersphere/bee)) is incl
 | ------- | ----------- |
 | `https://{swarm_cid}.swarm.localhost` | Swarm hash |
 
-### TON Sites (experimental)
+### TON Sites
 
-The resolver ships with TON Site (`adnl://`) content hash support enabled, but the RLDP-HTTP proxy container is not configured by default — see [TON Sites](../ton/ton-sites.md) for how it works and how to enable it. Once configured, sites are served at `https://{adnl_address}.adnl.localhost`.
+The resolver ships with TON Site (`adnl://`) content hash support enabled, but the local RLDP-HTTP proxy container is not configured by default — see [TON Sites](../ton/ton-sites.md) for how it works and how to enable it. Once configured, sites are served at `https://{adnl_address}.adnl.localhost`.
 
 ### DNS-over-HTTPS
 

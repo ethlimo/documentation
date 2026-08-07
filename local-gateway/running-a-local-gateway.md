@@ -164,6 +164,7 @@ Common settings can be overridden with environment variables — either exported
 | Variable | Default | Description |
 | -------- | ------- | ----------- |
 | `ETH_RPC_ENDPOINT` | `https://ethereum.publicnode.com` | Ethereum (mainnet) RPC endpoint |
+| `ETH_CHAIN_ID` | `1` | EIP-155 chain ID; set to `11155111` when pointing at Sepolia |
 | `GNO_RPC_ENDPOINT` | `https://rpc.gnosischain.com` | Gnosis Chain RPC endpoint |
 | `HTTP_PORT` / `HTTPS_PORT` | `80` / `443` | Host ports the gateway listens on |
 | `CACHE_TTL` | `300` | How long (seconds) domain resolution results are cached |
@@ -198,9 +199,21 @@ The HTTP ingress is powered by [Caddy](https://caddyserver.com/), and every Cadd
 
 Save the file and restart the gateway stack for the change to take effect.
 
-### Data URL server (EIP-8121 hooks)
+### Data URLs & EIP-8121 hooks (on-chain content)
 
-The gateway can also resolve [EIP-8121 hooks](https://github.com/ethlimo/ens-hooks) — on-chain content served directly from a smart contract. The Data URL server decodes a base64url-encoded hook payload from the ENS content hash, executes the contract call, and returns the result. It is enabled by default in the local stack (`DATAURL_ENABLED=true`) and serves requests at `GET /api/v1/dataurl/:ensname/:payload`. If you see 500 errors, check that `DATAURL_ENDPOINT` is set and reachable.
+Besides pointing to distributed storage (IPFS, Arweave, Swarm), an ENS content hash can contain an [EIP-8121 hook](https://github.com/ethlimo/ens-hooks): a payload that fully specifies a smart contract call — which function to invoke, with what parameters, on which contract, on which chain. Instead of fetching from a storage network, the gateway executes that call and serves the returned **data URL** — your content comes straight from the blockchain.
+
+Publishing content this way involves three encoding steps (handled by the [ens-hooks](https://github.com/ethlimo/ens-hooks) tooling):
+
+1. Artifact bytes → base64 data URL string
+2. Hook metadata → EIP-8121 hook bytes
+3. Hook bytes → ENS contenthash bytes
+
+Because on-chain storage is expensive, keep artifacts small — about 5KB or less is a practical target.
+
+The local gateway's Data URL server resolves these hooks out of the box: it decodes the hook payload from the ENS content hash, executes the contract call via ethers.js, and returns the result. It is enabled by default (`DATAURL_ENABLED=true`) and serves requests at `GET /api/v1/dataurl/:ensname/:payload`. If you see 500 errors, check that `DATAURL_ENDPOINT` is set and reachable.
+
+For a complete walkthrough — encoding an artifact as a data URL, deploying a `DataResolver` contract, and publishing the contenthash on Sepolia testnet — see the [ens-hooks encoding guide](https://github.com/ethlimo/ens-hooks/blob/main/docs/guide.md). A running local gateway (this page) is a prerequisite for that guide; you'll simply point it at Sepolia by setting `ETH_RPC_ENDPOINT` to a Sepolia RPC endpoint and `ETH_CHAIN_ID=11155111` before starting the stack.
 
 ## Privacy & security considerations
 

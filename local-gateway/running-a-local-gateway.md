@@ -12,6 +12,7 @@ Because every storage protocol is accessed through its own light client, content
 | ✅ IPFS & IPNS | Full IPFS gateway |
 | ✅ Swarm | Full Swarm gateway |
 | ✅ Arweave & ArNS | Full Arweave gateway |
+| ✅ TON Sites | ADNL (`adnl://`) resolution — requires enabling the proxy container |
 | ✅ On-chain Data URLs | EIP-8121 hook resolution — content served directly from smart contracts |
 | ✅ ENS enabled DNS-over-HTTPS (DoH) resolver | Extend ENS resolution to other applications |
 | ✅ Origin isolation | Browser isolation enforced for all content |

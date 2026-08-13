@@ -57,7 +57,7 @@ Full walkthrough: [Updating Your ENS Content Records](beginner/configuring-your-
 3. Check for common encoding mistakes: pasting a gateway URL (`https://ipfs.io/ipfs/...`) instead of a `ipfs://` URI, truncated values, or the wrong record field entirely.
 4. Update the record in the [ENS Manager](https://app.ens.domains/) and confirm the transaction.
 
-If you believe the content hash *should* be supported, reach out on [Discord](https://discord.gg/zf8NxW94rB).
+If you believe the content hash *should* be supported, open a ticket in `#support-tickets` on our [Discord](https://discord.gg/zf8NxW94rB) (see [Still stuck?](#still-stuck) for the steps).
 
 ## My name resolves in my wallet but not on eth.limo
 
@@ -71,7 +71,7 @@ Check which network the name lives on. The gateway performs initial resolution o
 
 1. Wait a moment and refresh.
 2. Check [eth.limo](https://eth.limo) for known issues or maintenance.
-3. If it persists, contact us on [Discord](https://discord.gg/zf8NxW94rB) and include the error code and status text shown at the bottom of the error page.
+3. If it persists, open a ticket in `#support-tickets` on our [Discord](https://discord.gg/zf8NxW94rB) and include the error code and status text shown at the bottom of the error page (see [Still stuck?](#still-stuck) for the steps).
 
 ## My record is correct but I still see old content
 
@@ -95,5 +95,10 @@ Your content is no longer retrievable from its storage network:
 
 ## Still stuck?
 
-* [eth.limo Discord](https://discord.gg/zf8NxW94rB) — gateway-side issues
-* [ENS Support](https://support.ens.domains/) — name and record management
+For gateway-side issues, open a support ticket in our Discord:
+
+1. Join the [eth.limo Discord](https://discord.gg/zf8NxW94rB).
+2. Complete the server verification — interaction is not authorized until you're verified.
+3. Open a ticket in the **`#support-tickets`** channel, including your ENS name and any error code shown.
+
+For name and record management issues, use [ENS Support](https://support.ens.domains/).

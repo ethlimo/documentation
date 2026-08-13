@@ -6,11 +6,11 @@ eth.limo is a public goods project that provides a free, open-source gateway to 
 
 Any [properly configured](./beginner/configuring-your-ens-name/updating-your-ens-content-records.md) ENS domain can be accessed through the eth.limo gateway. For example, `foo.eth.limo` will resolve to the content associated with the ENS name `foo.eth`, whether it's hosted on IPFS, Arweave, Swarm, or any other supported decentralized storage protocol. No configuration is required to use eth.limo, either as a user or a developer; simply add `.limo` to the end of your ENS domain name in any browser and you're on your way!
 
-Storage protocol support includes: [IPFS](https://ipfs.tech/), [IPNS](https://docs.ipfs.tech/concepts/ipns/), [Arweave](https://www.arweave.org/), [Arweave Name System](https://ar.io/arns), and [Swarm](https://www.ethswarm.org/).
+Storage protocol support includes: [IPFS](https://ipfs.tech/), [IPNS](https://docs.ipfs.tech/concepts/ipns/), [Arweave](https://www.arweave.org/), [Arweave Name System](https://ar.io/arns), [Swarm](https://www.ethswarm.org/), [TON Sites](./ton/ton-sites.md), and fully on-chain content via [Data URLs & ENS hooks (EIP-8121)](./advanced/onchain-data-urls.md).
 
 ### Want to run your own local gateway?
 
-Check out our API [repo](https://github.com/ethlimo/dweb-proxy-api) for instructions on how to set up your own local ENS gateway.
+Follow our [Running a Local Gateway](./local-gateway/running-a-local-gateway.md) guide to deploy the complete eth.limo stack on your own machine. The source code lives in the [dweb-proxy-api](https://github.com/ethlimo/dweb-proxy-api) repo.
 
 # What is ENS?
 

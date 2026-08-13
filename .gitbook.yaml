@@ -1,0 +1,17 @@
+root: ./
+
+structure:
+  readme: README.md
+  summary: SUMMARY.md
+
+redirects:
+  ipfs-pinning-providers/undefined: ipfs-pinning-providers/filebase.md
+  ipfs-pinning-providers/undefined/README: ipfs-pinning-providers/filebase.md
+  ipfs-pinning-providers/undefined/using-the-filebase-public-ipfs-gateway: ipfs-pinning-providers/using-the-filebase-public-ipfs-gateway.md
+  ipfs-pinning-providers/undefined/filebase-ipfs-pinning: ipfs-pinning-providers/filebase-ipfs-pinning.md
+  ipfs-pinning-providers/undefined/4everland: ipfs-pinning-providers/4everland.md
+  ipfs-pinning-providers/undefined/using-the-4everland-public-ipfs-gateway: ipfs-pinning-providers/using-the-4everland-public-ipfs-gateway.md
+  ipfs-pinning-providers/undefined/4everland-ipfs-pinning: ipfs-pinning-providers/4everland-ipfs-pinning.md
+  ipfs-pinning-providers/undefined/pinme: ipfs-pinning-providers/pinme.md
+  ipfs-pinning-providers/undefined/pinme-ipfs-pinning: ipfs-pinning-providers/pinme-ipfs-pinning.md
+  dns-over-https/doh: introduction/what-is-eth.limo/gateway-basics/dns-over-https.md

@@ -7,7 +7,7 @@ This guide covers the various record types supported by ENS, with a focus on con
 ENS supports multiple record types that can be stored and resolved for each domain:
 
 - **Address Records**: Ethereum and other cryptocurrency addresses
-- **Contenthash Records**: Content addressing (IPFS, IPNS, Arweave, etc.)
+- **Contenthash Records**: Content addressing (IPFS, IPNS, Arweave, on-chain data URLs, etc.)
 - **Text Records**: Key-value pairs for metadata
 - **Custom Records**: Application-specific data
 
@@ -27,12 +27,21 @@ Contenthash records use a standardized format that includes:
 
 ### Supported Content Addressing Systems
 
+Codec values per the [multicodec table](https://github.com/multiformats/multicodec/blob/master/table.csv):
+
 | System | Multicodec | Example |
 |--------|------------|---------|
-| IPFS | `0xe3` | `ipfs://Qm...` |
-| IPNS | `0xe5` | `ipns://k51...` |
-| Arweave | `0x6b` | `ar://...` |
-| Swarm | `0x7b` | `bzz://...` |
+| IPFS (`ipfs-ns`) | `0xe3` | `ipfs://bafy...` |
+| Swarm (`swarm-ns`) | `0xe4` | `bzz://...` |
+| IPNS (`ipns-ns`) | `0xe5` | `ipns://k51...` |
+| Arweave (`arweave-ns`) | `0xb29910` | `ar://...` |
+| TON (`adnl`) | `0xb69910` | `adnl://...` — see [TON Sites](../ton/ton-sites.md) |
+| EIP-8121 hook | `0x30009b` | On-chain contract call returning a data URL (draft, not yet in the multicodec table) |
+| Data URI | `0x3000f2` | `data:...` embedded directly in the contenthash (draft, not yet in the multicodec table) |
+
+For hook and data URI contenthashes, see [On-Chain Data URLs and ENS Hooks](onchain-data-urls.md).
+
+Note that a contenthash value is not simply the codec byte concatenated with the raw identifier: per [ENSIP-7](https://docs.ens.domains/ensip/7), the protocol code is stored as an unsigned varint, and content-addressed systems like IPFS/IPNS append a full CID (version, content type, multihash). Always use a library rather than hand-encoding.
 
 ### Setting Contenthash Records
 
@@ -44,34 +53,24 @@ Contenthash records use a standardized format that includes:
 4. Click "Add/Edit Record"
 5. Set the content hash to your IPFS/Arweave hash
 
-#### Using Ethers.js
+#### Programmatically
+
+Use the [`@ensdomains/content-hash`](https://github.com/ensdomains/content-hash) library for encoding and decoding — it implements ENSIP-7 correctly for all supported protocols:
 
 ```javascript
-const { ethers } = require('ethers');
+import { ethers } from 'ethers'; // ethers v6
+import contentHash from '@ensdomains/content-hash';
 
-// Encode contenthash for IPFS
-function encodeContenthash(content) {
-    if (content.startsWith('ipfs://')) {
-        const hash = content.replace('ipfs://', '');
-        const bytes = ethers.utils.base58decode(hash);
-        return ethers.utils.hexlify(ethers.utils.concat(['0xe3', bytes]));
-    }
-    
-    if (content.startsWith('ipns://')) {
-        const hash = content.replace('ipns://', '');
-        const bytes = ethers.utils.base58decode(hash);
-        return ethers.utils.hexlify(ethers.utils.concat(['0xe5', bytes]));
-    }
-    
-    throw new Error('Unsupported content addressing system');
-}
+// Encode a contenthash value
+const encoded = '0x' + contentHash.encode('ipfs-ns', 'bafybeib...');   // IPFS CID
+// contentHash.encode('ipns-ns', 'k51...')                             // IPNS
+// contentHash.encode('swarm-ns', '<64-hex swarm reference>')          // Swarm
+// contentHash.encode('arweave-ns', '<transaction id>')                // Arweave
 
-// Set contenthash record
-async function setContenthash(domain, content) {
+// Set the record on your resolver
+async function setContenthash(domain, encoded) {
     const resolver = new ethers.Contract(resolverAddress, RESOLVER_ABI, signer);
-    const node = ethers.utils.namehash(domain);
-    const encoded = encodeContenthash(content);
-    
+    const node = ethers.namehash(domain);
     await resolver.setContenthash(node, encoded);
 }
 ```
@@ -91,125 +90,22 @@ CID=$(ipfs add -r -Q /path/to/website)
 
 ### Decoding Contenthash Records
 
+The same library decodes stored values back to protocol and identifier:
+
 ```javascript
-function decodeContenthash(encoded) {
-    const bytes = ethers.utils.arrayify(encoded);
-    
-    if (bytes.length === 0) {
-        return null;
-    }
-    
-    const multicodec = bytes[0];
-    const content = bytes.slice(1);
-    
-    switch (multicodec) {
-        case 0xe3: // IPFS
-            const ipfsHash = ethers.utils.base58encode(content);
-            return `ipfs://${ipfsHash}`;
-            
-        case 0xe5: // IPNS
-            const ipnsHash = ethers.utils.base58encode(content);
-            return `ipns://${ipnsHash}`;
-            
-        case 0x6b: // Arweave
-            const arweaveId = ethers.utils.toUtf8String(content);
-            return `ar://${arweaveId}`;
-            
-        default:
-            throw new Error(`Unknown multicodec: ${multicodec}`);
-    }
-}
+import contentHash from '@ensdomains/content-hash';
+
+const encoded = await resolver.contenthash(ethers.namehash('ens.eth'));
+
+contentHash.getCodec(encoded);  // e.g. 'ipfs-ns'
+contentHash.decode(encoded);    // e.g. 'bafybeib...'
 ```
 
-## Multiformats and Multicodecs
+For a quick lookup without writing any code, the eth.limo DoH endpoint returns the decoded value directly:
 
-Multiformats is a self-describing data format that enables interoperability between different content addressing systems.
-
-### Multicodec Table
-
-```javascript
-const MULTICODECS = {
-    // IPFS
-    'ipfs': 0xe3,
-    'ipfs-ns': 0xe5,
-    
-    // Arweave
-    'arweave': 0x6b,
-    
-    // Swarm
-    'swarm': 0x7b,
-    
-    // Other systems
-    'skynet': 0x1b,
-    'sia': 0x1c
-};
-
-// Note: Verify multicodec values with current multiformats specification
-// https://github.com/multiformats/multicodec/blob/master/table.csv
-```
-
-### Multiformat Encoding
-
-```javascript
-class MultiformatEncoder {
-    static encode(system, content) {
-        const multicodec = MULTICODECS[system];
-        if (!multicodec) {
-            throw new Error(`Unknown system: ${system}`);
-        }
-        
-        let encodedContent;
-        switch (system) {
-            case 'ipfs':
-            case 'ipfs-ns':
-                encodedContent = ethers.utils.base58decode(content);
-                break;
-            case 'arweave':
-                encodedContent = ethers.utils.toUtf8Bytes(content);
-                break;
-            default:
-                throw new Error(`Unsupported system: ${system}`);
-        }
-        
-        return ethers.utils.hexlify(
-            ethers.utils.concat([multicodec, encodedContent])
-        );
-    }
-    
-    static decode(encoded) {
-        const bytes = ethers.utils.arrayify(encoded);
-        const multicodec = bytes[0];
-        const content = bytes.slice(1);
-        
-        // Find system by multicodec
-        const system = Object.keys(MULTICODECS).find(
-            key => MULTICODECS[key] === multicodec
-        );
-        
-        if (!system) {
-            throw new Error(`Unknown multicodec: ${multicodec}`);
-        }
-        
-        let decodedContent;
-        switch (system) {
-            case 'ipfs':
-            case 'ipfs-ns':
-                decodedContent = ethers.utils.base58encode(content);
-                break;
-            case 'arweave':
-                decodedContent = ethers.utils.toUtf8String(content);
-                break;
-            default:
-                throw new Error(`Unsupported system: ${system}`);
-        }
-        
-        return {
-            system,
-            content: decodedContent,
-            full: `${system}://${decodedContent}`
-        };
-    }
-}
+```bash
+curl 'https://dns.eth.limo/dns-query?name=ens.eth'
+# ...,"data":"dnslink=/ipfs/bafybei...",...
 ```
 
 ## TXT Records

@@ -102,3 +102,5 @@ For gateway-side issues, open a support ticket in our Discord:
 3. Open a ticket in the **`#support-tickets`** channel, including your ENS name and any error code shown.
 
 For name and record management issues, use [ENS Support](https://support.ens.domains/).
+
+To report phishing, malware, or other AUP violations, see [Acceptable Use & Abuse Reports](abuse.md).

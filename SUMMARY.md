@@ -81,3 +81,4 @@
 ## Support
 
 * [Troubleshooting](troubleshooting.md)
+* [Acceptable Use & Abuse Reports](abuse.md)

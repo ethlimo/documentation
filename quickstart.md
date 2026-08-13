@@ -39,7 +39,7 @@ In the [ENS Manager](https://app.ens.domains/), open your name → **Records** �
 ipfs://bafybeib...
 ```
 
-(Use `ipns://`, `ar://`, or `bzz://` for other protocols.) Save and confirm the transaction.
+(Use `ipns://`, `ar://`, `bzz://`, or `adnl://` for other protocols.) Save and confirm the transaction.
 
 📖 Details: [Updating Your ENS Content Records](beginner/configuring-your-ens-name/updating-your-ens-content-records.md)
 

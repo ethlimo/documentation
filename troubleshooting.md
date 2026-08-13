@@ -59,6 +59,10 @@ Full walkthrough: [Updating Your ENS Content Records](beginner/configuring-your-
 
 If you believe the content hash *should* be supported, reach out on [Discord](https://discord.gg/zf8NxW94rB).
 
+## My name resolves in my wallet but not on eth.limo
+
+Check which network the name lives on. The gateway performs initial resolution on Ethereum Mainnet, Base (Basenames — `name.base.eth`), and Gnosis Mainnet (`.gno` names) — names on other chains or testnets won't resolve, even if wallets or explorers that support those networks display them. Records reached *via* CCIP-read from a resolver on a supported network work normally. See [Supported Networks](introduction/what-is-eth.limo/gateway-basics/README.md#supported-networks).
+
 ## Error: "Service Issue" (5xx)
 
 **What it means:** the gateway hit an internal problem processing the request. This is usually temporary.

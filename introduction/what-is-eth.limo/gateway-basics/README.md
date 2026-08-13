@@ -18,6 +18,7 @@ eth.limo operates a wildcard DNS record (`*.eth.limo`) that captures requests fo
 | --- | -------- |
 | `https://ens.eth.limo` | The name `ens.eth` |
 | `https://app.ens.eth.limo` | The subdomain `app.ens.eth` (any depth of subdomains is supported) |
+| `https://name.base.eth.limo` | The Basename `name.base.eth`, resolved on Base |
 | `https://12345.gno.limo` | The GNS name `12345.gno` — see [.gno Resolution](../../../gnosis/gateway.md) |
 
 Because each name is served from its own origin (`*.eth.limo` hostname), browser storage, cookies, and permissions are isolated per dWebsite.
@@ -26,8 +27,24 @@ Because each name is served from its own origin (`*.eth.limo` hostname), browser
 
 If a name has no `contenthash` record the gateway returns a **404 "ENS Domain Not Configured"** page; if the record exists but can't be resolved it returns **422 "Unsupported Contenthash"**. See [Troubleshooting](../../../troubleshooting.md) for what each error means and how to fix it.
 
+### Supported Networks
+
+Name resolution is supported on the following networks:
+
+| Network | Used for |
+| ------- | -------- |
+| Ethereum Mainnet | `.eth` names, including ENS-integrated DNS names such as [`.art`](../../../.art-resolution.md) |
+| Base | Basenames — `name.base.eth`, accessible at `name.base.eth.limo` |
+| Gnosis Mainnet | [`.gno` (GNS) names](../../../gnosis/gateway.md), accessible at `name.gno.limo` |
+
+The initial resolution — locating a name's resolver and reading its records — must take place on one of these networks.
+
+This does not limit where your *data* can live. Resolvers on a supported network may use [CCIP-read (ERC-3668)](https://eips.ethereum.org/EIPS/eip-3668) to fetch records from other chains or off-chain sources — but the resolver performing that redirection must itself be discoverable on a supported network. In other words: CCIP-read extends *where records come from*, not *where resolution begins*.
+
+Names registered or managed exclusively on other networks (including testnets) will not resolve through the gateway.
+
 ### CCIP and Off-chain Resolution
-The `*.eth.limo`, `*.eth.link`, and `*.gno.limo` gateways support off-chain resolution via [CCIP](https://eips.ethereum.org/EIPS/eip-3668). For more information, please consult the following resources:
+The `*.eth.limo`, `*.eth.link`, and `*.gno.limo` gateways support off-chain resolution via [CCIP](https://eips.ethereum.org/EIPS/eip-3668). Note that CCIP-read is a second hop: the initial resolver lookup must still occur on a [supported network](#supported-networks). For more information, please consult the following resources:
 
 * [Unruggable Gateway](https://github.com/unruggable-labs/unruggable-gateways)
 * [Cross Chain/Offchain Resolvers](https://docs.ens.domains/resolvers/ccip-read)

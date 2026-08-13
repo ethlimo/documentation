@@ -4,6 +4,10 @@ Run the complete eth.limo gateway stack locally on your own machine — or share
 
 Because every storage protocol is accessed through its own light client, content is verified end-to-end. You choose the RPC provider, you control the network path (VPN/Tor friendly), and you keep full custody of your browsing metadata. Say goodbye to DNS hijacking, censorship and gateway outages.
 
+{% hint style="info" %}
+All source code, compose manifests, and configuration for the local gateway live in the [`local_gateway` directory of the dweb-proxy-api repository](https://github.com/ethlimo/dweb-proxy-api/tree/main/local_gateway). This page walks through the essentials — consult the repository for the latest setup and configuration details.
+{% endhint %}
+
 ## Features
 
 | Feature | Description |
@@ -235,3 +239,8 @@ Local resolution is a big privacy improvement over public gateways, but keep the
 * **HTTPS breaks after deleting `./data`** — the CA certificate is regenerated with the directory; re-run `./setup.sh` to trust the new one.
 * **Port conflict on 80/443** — another service is already bound to those ports. Set `HTTP_PORT`/`HTTPS_PORT` to alternative values before starting.
 * **`.localhost` doesn't resolve** — most operating systems resolve `*.localhost` to the loopback address automatically, but a few DNS setups interfere. Check with `ping test.eth.localhost`.
+
+## Source & Resources
+
+* [`local_gateway` directory](https://github.com/ethlimo/dweb-proxy-api/tree/main/local_gateway) — setup scripts, `docker-compose.yml`, Caddy/DNS/certificate configuration, and the upstream README
+* [dweb-proxy-api repository](https://github.com/ethlimo/dweb-proxy-api) — the resolver powering the stack; report local gateway issues here

@@ -57,6 +57,12 @@ By default all content is cached for 5 minutes. This means that if you update th
 
 All subdomain certificates, i.e. non `*.eth.limo` are generated on demand, provided that there is a valid resolver and `contenthash` record set for the subdomain. Users no longer need to request certificates manually in our [Discord server](https://discord.gg/zf8NxW94rB).
 
+#### Issuance rate limits
+
+On-demand certificate issuance is rate limited per parent domain: a maximum of **10 certificates per parent domain per 24 hours** may be issued. For example, `a.mydomain.eth.limo`, `b.mydomain.eth.limo`, and `c.a.mydomain.eth.limo` all count against the limit for `mydomain.eth`. Once the limit is reached, further subdomains will not receive a certificate until the window resets.
+
+If you need more than this, for example a dApp that issues subdomains to users, contact us at [support@eth.limo](mailto:support@eth.limo) or open a ticket in the `#support-tickets` channel of our [Discord](https://discord.gg/zf8NxW94rB) (server verification is required before you can interact) to request a wildcard certificate for your domain.
+
 ### Server Side Headers
 
 If you require custom HTTP response headers to support features such as [SharedArrayBuffer](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global\_Objects/SharedArrayBuffer) please open a ticket in the `#support-tickets` channel of our [Discord](https://discord.gg/zf8NxW94rB) (server verification is required before you can interact). We are actively collaborating on an ENSIP specification that will allow ENS domain holders to specify server side headers in a `TXT` record, however this feature is still in heavy development for the time being.

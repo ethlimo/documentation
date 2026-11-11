@@ -1,5 +1,5 @@
 ---
-description: Resolving TON Sites through ENS and the eth.limo gateway stack
+description: Resolving TON Sites and TON Storage bags through ENS and the eth.limo gateway stack
 ---
 
 # TON Sites
@@ -28,6 +28,37 @@ The gateway resolves the record and proxies the request to the TON network throu
 {% hint style="info" %}
 In the [local gateway](../local-gateway/running-a-local-gateway.md) stack the resolver ships with TON support enabled (`TON_ENABLED=true`), but the RLDP-HTTP proxy container (`tonutils-proxy`) is not enabled by default — you must supply and uncomment a proxy image in `docker-compose.yml`. Once configured, TON Sites are served locally at `https://{adnl-address}.adnl.localhost`.
 {% endhint %}
+
+## TON Storage Bags
+
+eth.limo also resolves ENS names that point directly at a [TON Storage](https://docs.ton.org/foundations/web3/ton-storage) **bag**. Use a bag to publish a static website (HTML and assets) or any other data on TON without running a server or reverse proxy.
+
+A bag is a single file or a directory, split into 128 KiB chunks and identified by a 256-bit **BagID** (the hash of its torrent info cell). A Merkle tree of chunk hashes lets anyone verify the data they download against the BagID. Set your ENS content hash to the BagID, written as 64 hex characters:
+
+```
+tonstorage://<BagID>
+```
+
+The `ton-storage` multicodec is `0xb79910`. Encoding is supported in [`@ensdomains/content-hash`](https://github.com/ensdomains/content-hash) 3.2.0+ and [ensjs](https://github.com/ensdomains/ensjs/pull/449). TON Storage resolution is **live on the public eth.limo gateway**. The local gateway doesn't support it yet.
+
+### Creating a bag
+
+Run a `storage-daemon`, then create the bag from your site's build directory with the `storage-daemon-cli` console:
+
+```bash
+storage-daemon -v 3 -C global.config.json -I <ip>:3333 -p 5555 -D storage-db
+```
+
+```
+create <path-to-site> -d "my site"
+list --hashes
+```
+
+`list --hashes` prints the BagID to put in your content hash. See the [TON Storage docs](https://docs.ton.org/foundations/web3/ton-storage) for full daemon and CLI usage.
+
+### Keeping a bag available
+
+A bag's data is **not stored on-chain**. Peers that seed the bag hold it and announce themselves in the TON DHT. To keep it available long term, hire a **storage provider**. A per-bag smart contract stores the bag's Merkle root, asks the provider for regular proofs that it still holds the data, and handles payment (priced per megabyte per day). When the contract closes or runs out of funds it self-destructs, and the provider may delete its copy. Keep a seeding node or an active provider contract for as long as your ENS name points at the bag, and keep your own copy of the data. Otherwise the site will stop resolving.
 
 ## Hosting Your Own TON Site
 
@@ -62,5 +93,6 @@ TON Sites support two access paths:
 ## Resources
 
 * [TON web3 overview](https://docs.ton.org/foundations/web3/overview)
+* [TON Storage](https://docs.ton.org/foundations/web3/ton-storage)
 * [TON Sites — direct access via ADNL](https://docs.ton.org/foundations/web3/ton-sites#direct-access-via-adnl-address)
 * [tonutils reverse proxy](https://github.com/tonutils/reverse-proxy)

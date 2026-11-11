@@ -34,6 +34,7 @@ The content hash field accepts any supported storage protocol — enter your ide
 | Arweave / ArNS | `ar://<transaction-id>` | [Arweave and ArNS](../../advanced/arweave-arns.md) |
 | Swarm | `bzz://<64-hex-reference>` | [Hosting on Swarm](../../swarm/hosting-on-swarm.md) |
 | TON Sites | `adnl://<adnl-address>` | [TON Sites](../../ton/ton-sites.md) |
+| TON Storage | `tonstorage://<64-hex-bag-id>` | [TON Storage Bags](../../ton/ton-sites.md#ton-storage-bags) |
 
 <figure><img src="../../.gitbook/assets/ens-manager-06.png" alt=""><figcaption></figcaption></figure>
 

@@ -69,4 +69,4 @@ If you require custom HTTP response headers to support features such as [SharedA
 
 ### Supported Storage Protocols
 
-Currently, we support IPFS, IPNS, Arweave, ARNS (Arweave Name System), Swarm, [TON Sites](../../../ton/ton-sites.md), and fully on-chain content via [Data URLs & ENS hooks (EIP-8121)](../../../advanced/onchain-data-urls.md).
+Currently, we support IPFS, IPNS, Arweave, ARNS (Arweave Name System), Swarm, [TON Sites](../../../ton/ton-sites.md), [TON Storage](../../../ton/ton-sites.md#ton-storage-bags), and fully on-chain content via [Data URLs & ENS hooks (EIP-8121)](../../../advanced/onchain-data-urls.md).

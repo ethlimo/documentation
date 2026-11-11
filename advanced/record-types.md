@@ -36,6 +36,7 @@ Codec values per the [multicodec table](https://github.com/multiformats/multicod
 | IPNS (`ipns-ns`) | `0xe5` | `ipns://k51...` |
 | Arweave (`arweave-ns`) | `0xb29910` | `ar://...` |
 | TON (`adnl`) | `0xb69910` | `adnl://...` — see [TON Sites](../ton/ton-sites.md) |
+| TON Storage (`ton-storage`) | `0xb79910` | `tonstorage://<BagID>` — see [TON Storage Bags](../ton/ton-sites.md#ton-storage-bags) |
 | EIP-8121 hook | `0x30009b` | On-chain contract call returning a data URL (draft, not yet in the multicodec table) |
 | Data URI | `0x3000f2` | `data:...` embedded directly in the contenthash (draft, not yet in the multicodec table) |
 
